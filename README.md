@@ -24,7 +24,7 @@ Skyfang's own site (`/skyfang/`) lives in the separate `maani1pk/skyfang` reposi
 ## Common edits
 
 - **Studio name / email** — edit `assets/js/config.js`. Every `data-brand` element picks it up.
-  Then find/replace `[MY STUDIO NAME]` across the repo so the no-JavaScript fallbacks match.
+  To rename the studio, also find/replace `Abdur Studio` across the repo (titles, meta tags, fallbacks).
 - **Accent color** — `--accent` (and `--accent-line`) in `assets/css/site.css`.
 - **Add a project** — add an object to `assets/js/projects.js` and put images in `assets/img/projects/`
   (JPEG, about 900–1280 px wide). Set `featured: true` to show it on the home page.

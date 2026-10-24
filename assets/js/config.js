@@ -1,12 +1,12 @@
 /*
  * Brand settings — change these to rebrand the whole site.
  * Every element with data-brand="<key>" shows the value; data-brand-href="email" etc. fill links.
- * Page <title>/meta tags don't include the studio name; after you pick one, find/replace
- * "[MY STUDIO NAME]" across the repo to also update the static fallbacks.
+ * The studio name is also written into page titles, meta tags and no-JavaScript fallbacks;
+ * to rename, find/replace "Abdur Studio" across the repo too.
  */
 window.SITE = {
   personName: 'Abdur Rehman Arshad',
-  studioName: '[MY STUDIO NAME]',
+  studioName: 'Abdur Studio',
   studioEmail: 'maani1pk@gmail.com',
   accent: '#2DD4EE', // also --accent in assets/css/site.css
 

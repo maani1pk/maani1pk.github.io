@@ -13,7 +13,7 @@ window.PROJECTS = [
     platform: 'iPhone & iPad', tech: 'Unity · C#', role: 'Solo developer',
     desc: '38 arcade air-combat missions across 8 worlds, multi-phase bosses and 6 upgradable jets.',
     img: '/assets/img/skyfang/boss.jpg', imgFit: 'cover', alt: 'Skyfang boss aircraft battle',
-    link: '/work/skyfang.html', linkLabel: 'Project page'
+    link: '/skyfang/', linkLabel: 'Official game site'
   },
   {
     id: 'punchverse', name: 'PunchVerse VR', featured: true,
