@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://maani1pk.github.io/sitemap.xml
 Sitemap: https://maani1pk.github.io/skyfang/sitemap.xml
