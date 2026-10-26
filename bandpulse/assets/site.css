@@ -28,7 +28,7 @@ body {
   font: 17px/1.6 var(--font);
   overflow-x: hidden;
 }
-img, video { max-width: 100%; display: block; }
+img, video { max-width: 100%; height: auto; display: block; }
 a { color: var(--cyan); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: #b9fbff; }
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
