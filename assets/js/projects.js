@@ -16,6 +16,14 @@ window.PROJECTS = [
     link: '/skyfang/', linkLabel: 'Official game site'
   },
   {
+    id: 'bandpulse', name: 'BandPulse: Piano Rhythm Game', featured: true,
+    cats: ['games'], status: 'soon', statusLabel: 'Coming soon · Google Play & App Store', owner: 'personal',
+    platform: 'Android & iPhone', tech: 'Unity · C# · DSP-clock rhythm engine', role: 'Solo developer',
+    desc: 'One song, every instrument: piano, guitar, drums and DJ, 12 original songs and a 60-level World Tour.',
+    img: '/bandpulse/assets/img/shot-piano.jpg', imgFit: 'phone', alt: 'BandPulse Piano Rush gameplay',
+    link: '/bandpulse/', linkLabel: 'Official game site'
+  },
+  {
     id: 'punchverse', name: 'PunchVerse VR', featured: true,
     cats: ['vr'], status: 'dev', owner: 'personal',
     platform: 'Meta Quest 3', tech: 'Unity · mixed reality', role: 'Solo developer',
@@ -24,7 +32,7 @@ window.PROJECTS = [
     alt: 'Illustrative photo: a player in a VR headset with hands raised'
   },
   {
-    id: 'tinyzoo', name: 'TinyZoo Colors', featured: true,
+    id: 'tinyzoo', name: 'TinyZoo Colors',
     cats: ['kids'], status: 'dev', owner: 'personal',
     platform: 'iOS & Android', tech: 'Unity · procedural art · child-directed ads setup', role: 'Solo developer',
     desc: 'Toddler animal coloring with smoothed Catmull-Rom brush paths.',
