@@ -66,6 +66,7 @@ p { margin: 0; }
 .nav { display: flex; align-items: center; gap: 16px 32px; padding-block: 14px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--text); font: 600 17px var(--display); margin-right: auto; }
 .brand:hover { color: var(--text); }
+.brand__logo { display: block; height: 44px; width: auto; }
 .brand__mark { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--accent); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.04em; color: var(--accent); }
 .nav-toggle { display: none; min-width: 44px; min-height: 44px; background: none; border: 1px solid var(--line-strong); border-radius: 10px; color: var(--text); font: inherit; cursor: pointer; padding: 0 12px; }
 .menu { display: flex; align-items: center; gap: 4px 26px; flex-wrap: wrap; }
