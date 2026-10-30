@@ -216,6 +216,7 @@ h2 { margin: 0; font-size: clamp(30px, 6vw, 46px); line-height: 1.08; font-weigh
 .doc .toc { margin: 28px 0; padding: 18px 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
 .doc .toc ol { margin: 8px 0 0; padding-left: 1.3em; columns: 2 220px; }
 .doc h2 { font-size: 23px; margin: 44px 0 10px; scroll-margin-top: 80px; }
+.doc h3 { font-size: 18px; margin: 28px 0 8px; scroll-margin-top: 80px; }
 .doc p, .doc li { color: var(--soft); overflow-wrap: anywhere; }
 .doc strong { color: var(--text); }
 .doc ul { padding-left: 1.25em; }
