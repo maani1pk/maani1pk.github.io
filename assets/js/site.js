@@ -4,7 +4,7 @@
   var PROJECTS = window.PROJECTS || [];
 
   var STATUS = {
-    released: ['Released', 'chip--released'],
+    released: ['Released', 'chip--live'],
     soon: ['Coming soon', 'chip--soon'],
     dev: ['In development', 'chip--dev'],
     prototype: ['Prototype', 'chip--proto'],
@@ -59,6 +59,7 @@
       img.src = p.img; img.alt = p.alt || p.name; img.loading = 'lazy'; img.decoding = 'async';
       fig.appendChild(img);
       fig.appendChild(el('span', 'card__idx', (i < 9 ? '0' : '') + (i + 1)));
+      if (p.live) fig.appendChild(el('span', 'card__live', 'Live on the App Store'));
       if (p.link) { var cue = el('span', 'card__cue', p.link.indexOf('http') === 0 ? '↗' : '→'); cue.setAttribute('aria-hidden', 'true'); fig.appendChild(cue); }
       a.appendChild(fig);
       if (p.stock) a.appendChild(el('p', 'card__note', 'Illustrative stock photo · captures coming soon'));
@@ -82,11 +83,22 @@
       dl.appendChild(el('dd', null, r[1]));
     });
     body.appendChild(dl);
+    var actions = p.store ? el('div', 'card__actions') : body;
     if (p.link) {
       var l = el('a', 'card__link', (p.linkLabel || 'View project') + (/^https?:/.test(p.link) ? ' ↗' : ' →'));
       l.href = p.link;
       l.setAttribute('aria-label', (p.linkLabel || 'View project') + ': ' + p.name);
-      body.appendChild(l);
+      actions.appendChild(l);
+    }
+    if (p.store) {
+      var s = el('a', 'btn-store');
+      s.href = p.store;
+      s.rel = 'noopener';
+      s.setAttribute('aria-label', 'Download ' + p.name + ' on the App Store');
+      s.appendChild(el('small', null, 'Download on the'));
+      s.appendChild(el('strong', null, 'App Store'));
+      actions.appendChild(s);
+      body.appendChild(actions);
     }
     a.appendChild(body);
     return a;

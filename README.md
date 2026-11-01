@@ -12,7 +12,7 @@ Skyfang's own site (`/skyfang/`) lives in the separate `maani1pk/skyfang` reposi
 |---|---|
 | `index.html` | Home: hero, featured projects, about, studio, Vimersive Studio |
 | `work/index.html` | Portfolio with category filters (`/work/#vr`, `#kids`, …) |
-| `work/skyfang.html` | Skyfang project showcase |
+| `work/skyfang/index.html` | Skyfang case study (live on the App Store) |
 | `services/index.html` | Skills and services |
 | `contact/index.html` | Contact details and email-based inquiry form |
 | `404.html` | Not-found page |

@@ -5,15 +5,18 @@
  * cats:   games, kids, ar, vr, training, i3d, client, proto
  * imgFit: 'cover' (landscape art) | 'phone' (portrait capture, shown whole)
  * stock:  true when the image is an illustrative stock photo, not a capture
+ * live:   true adds a "Live" badge on the image (only for apps actually on a store)
+ * store:  store listing URL; adds an App Store button next to the main link
  */
 window.PROJECTS = [
   {
     id: 'skyfang', name: 'Skyfang: Airplane Games', featured: true,
-    cats: ['games'], status: 'soon', statusLabel: 'Coming soon · App Store', owner: 'personal',
-    platform: 'iPhone & iPad', tech: 'Unity · C#', role: 'Solo developer',
-    desc: '38 arcade air-combat missions across 8 worlds, multi-phase bosses and 6 upgradable jets.',
+    cats: ['games'], status: 'released', statusLabel: 'Published · App Store', owner: 'vimersive', live: true,
+    platform: 'iOS · iPhone & iPad', tech: 'Unity · C#', role: 'Mobile game development',
+    desc: 'Arcade air combat for iPhone and iPad: 38 missions across 8 worlds, multi-phase boss fights and 6 upgradable jets.',
     img: '/assets/img/skyfang/boss.jpg', imgFit: 'cover', alt: 'Skyfang boss aircraft battle',
-    link: '/skyfang/', linkLabel: 'Official game site'
+    link: '/work/skyfang/', linkLabel: 'Read the case study',
+    store: 'https://apps.apple.com/us/app/skyfang-airplane-games/id6825618120'
   },
   {
     id: 'bandpulse', name: 'BandPulse: Piano Rhythm Game', featured: true,
