@@ -107,23 +107,72 @@
     if (location.hash) fromHash();
   }
 
-  // No backend: the form builds a mailto: link and opens the visitor's email app.
+  // Inquiry form: sent in the background through FormSubmit (a form-to-email service) to the studio inbox.
+  // Without JavaScript the form posts to the same service as a normal page; if the service cannot be reached,
+  // the visitor gets a ready-made email to send instead.
   function contactForm() {
     var form = document.getElementById('inquiry-form');
     if (!form) return;
+    var status = document.getElementById('inquiry-status');
+    var btn = document.getElementById('inquiry-send');
+    var endpoint = 'https://formsubmit.co/ajax/' + SITE.studioEmail;
+
+    function say(text, kind) {
+      if (!status) return;
+      status.textContent = text;
+      status.className = 'form-status' + (kind ? ' form-status--' + kind : '');
+    }
+    function mailtoHref(d) {
+      var body = 'Name: ' + d.get('name') + '\nEmail: ' + d.get('email') + '\nCompany: ' + (d.get('company') || '-') +
+        '\nProject type: ' + d.get('category') + '\nBudget: ' + d.get('budget') + '\n\n' + d.get('message');
+      return 'mailto:' + SITE.studioEmail + '?subject=' + encodeURIComponent('Project inquiry: ' + d.get('category')) + '&body=' + encodeURIComponent(body);
+    }
+    function done(d) {
+      form.innerHTML = '';
+      var box = el('div', 'form-done');
+      box.setAttribute('role', 'status');
+      box.innerHTML = '<svg viewBox="0 0 52 52" width="64" height="64" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 27l8 8 14-17" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      box.appendChild(el('h2', null, 'Message sent'));
+      box.appendChild(el('p', 'muted', 'Thanks' + (d.get('name') ? ', ' + d.get('name') : '') + '. I will reply to ' + (d.get('email') || 'the email address you entered') + '.'));
+      var again = el('button', 'btn btn--ghost', 'Send another message');
+      again.type = 'button';
+      again.addEventListener('click', function () { location.href = '/contact/'; });
+      box.appendChild(again);
+      form.appendChild(box);
+      box.scrollIntoView({ block: 'center', behavior: REDUCE ? 'auto' : 'smooth' });
+    }
+
+    if (/[?&]sent=1/.test(location.search)) {
+      done(new FormData());
+      return;
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!form.reportValidity()) return;
       var d = new FormData(form);
-      var body = 'Name: ' + d.get('name') + '\nCompany: ' + (d.get('company') || '-') +
-        '\nProject type: ' + d.get('category') + '\nBudget: ' + d.get('budget') + '\n\n' + d.get('message');
-      location.href = 'mailto:' + SITE.studioEmail +
-        '?subject=' + encodeURIComponent('Project inquiry: ' + d.get('category')) +
-        '&body=' + encodeURIComponent(body);
-      var s = document.getElementById('inquiry-status');
-      if (s) {
-        s.textContent = 'Your email app should open with the message ready. If it doesn’t, email ' + SITE.studioEmail + ' directly.';
-        s.classList.add('pop');
-      }
+      if (d.get('_honey')) { done(d); return; } // a bot filled the hidden field: pretend it worked
+      d.set('_subject', 'New project inquiry: ' + d.get('category') + ' (' + d.get('name') + ')');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      say('', '');
+      var failed = function () {
+        btn.disabled = false;
+        btn.textContent = 'Send message';
+        status.className = 'form-status form-status--error';
+        status.textContent = 'The message could not be sent. ';
+        var a = el('a', null, 'Send it from your email app instead');
+        a.href = mailtoHref(d);
+        status.appendChild(a);
+        status.appendChild(document.createTextNode(' or write to ' + SITE.studioEmail + '.'));
+      };
+      fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: d })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (res) {
+          if (res.ok && (res.j.success === true || res.j.success === 'true')) done(d);
+          else failed();
+        })
+        .catch(failed);
     });
   }
 

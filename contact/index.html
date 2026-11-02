@@ -63,11 +63,19 @@
 </div>
 </div>
 
-<form class="form" id="inquiry-form" aria-labelledby="form-h">
+<form class="form" id="inquiry-form" aria-labelledby="form-h" action="https://formsubmit.co/maani1pk@gmail.com" method="POST">
 <h2 id="form-h" style="font-size:24px">Project inquiry</h2>
+<input type="hidden" name="_subject" value="New project inquiry from the website">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://maani1pk.github.io/contact/?sent=1">
+<div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
 <div class="form__grid">
 <label class="field">Your name
 <input type="text" name="name" autocomplete="name" required>
+</label>
+<label class="field">Your email
+<input type="email" name="email" autocomplete="email" required placeholder="you@company.com">
 </label>
 <label class="field">Company (optional)
 <input type="text" name="company" autocomplete="organization">
@@ -97,10 +105,10 @@
 <textarea name="message" rows="7" required placeholder="Goal, platforms, timeline, anything already built…"></textarea>
 </label>
 <div class="btn-row">
-<button class="btn btn--primary" type="submit" style="border:0;font:inherit;font-weight:600;cursor:pointer">Open in my email app</button>
-<p class="small" style="flex:1 1 260px">This form doesn't send anything by itself: it opens your email app with the details filled in, addressed to <span data-brand="studioEmail">maani1pk@gmail.com</span>.</p>
+<button class="btn btn--primary" type="submit" id="inquiry-send" style="border:0;font:inherit;font-weight:600;cursor:pointer">Send message</button>
+<p class="small" style="flex:1 1 260px">Your message goes straight to my inbox, and I reply to the email address you enter. It is delivered through the FormSubmit service. You can also write to <a data-brand-href="studioEmail" data-brand="studioEmail" href="mailto:maani1pk@gmail.com">maani1pk@gmail.com</a>.</p>
 </div>
-<p class="small" id="inquiry-status" role="status"></p>
+<p class="form-status" id="inquiry-status" role="status" aria-live="polite"></p>
 </form>
 </main>
 
