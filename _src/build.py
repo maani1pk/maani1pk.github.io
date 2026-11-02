@@ -113,7 +113,8 @@ def card(p):
     if not img:
         img = f'<span class="card__empty" aria-hidden="true"></span>'
     live = '<span class="card__live">Live on the App Store</span>' if p['status'] == 'released' and p.get('store') and 'apple' in p['store'] else ''
-    note = '<p class="card__note">Illustrative stock photo. Captures coming soon.</p>' if p.get('stock') else ''
+    note = ('<p class="card__note">Illustrative stock photo. Captures coming soon.</p>' if p.get('stock')
+            else '<p class="card__note">Cover graphic. Captures coming soon.</p>' if p.get('cover') else '')
     chip = f'<span class="card__badge">{status_chip(p)}</span>' if not live else ''
     tech = ''.join(f'<li>{E(t)}</li>' for t in p['tech'][:3])
     ext = ' rel="noopener"' if not p['internal'] else ''

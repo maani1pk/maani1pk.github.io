@@ -89,7 +89,7 @@
     "tagline": "A racing mode built on Unity's open Boat Attack sample.",
     "desc": "A racing mode built on top of Unity's open Boat Attack sample.",
     "details": ["This is an experiment on top of Unity's open-source Boat Attack project, adapted to build and run on Android. The base boats, water and tracks belong to Unity's sample; the gameplay and mobile build work are mine."],
-    "img": "/assets/img/projects/stock-speedboat.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a speedboat on open water"
+    "img": "/assets/img/projects/banners/boat-racing.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a speedboat on open water"
   },
   {
     "id": "vpn-super", "name": "VPN Super Free", "featured": true, "page": "/vpn-super/",
@@ -162,7 +162,7 @@
     "platforms": ["Meta Quest 3"], "tech": ["Unity", "OpenXR", "Mixed reality passthrough"], "role": "Solo developer",
     "tagline": "Boxing and fitness for Quest 3, including a mixed-reality mode.",
     "desc": "Boxing and fitness for Quest 3, including a mixed-reality mode.",
-    "img": "/assets/img/projects/stock-vr-fitness.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a player in a VR headset with hands raised"
+    "img": "/assets/img/projects/banners/punchverse.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a player in a VR headset with hands raised"
   },
   {
     "id": "vr-art-studio", "name": "VR Art Studio", "featured": false,
@@ -175,7 +175,7 @@
       "A development build runs through every screen in automated tests. Testing on a headset is the next milestone, so it is not released yet."
     ],
     "highlights": ["10 brushes with undo, redo and autosave", "Sculpting from primitives and voxels", "Three themed galleries with teleport", "Automated UI and logic tests"],
-    "img": "/assets/img/projects/stock-vr-create.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a person in a VR headset reaching out"
+    "img": "/assets/img/projects/banners/vr-art-studio.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a person in a VR headset reaching out"
   },
   {
     "id": "vm-booths", "name": "3D Exhibition Booths", "featured": false,
@@ -210,6 +210,7 @@
     "platforms": ["3D"], "tech": ["Details coming soon"], "role": "CEO and studio lead",
     "tagline": "Further 3D spaces.",
     "desc": "Further 3D spaces from Vimersive's portfolio.",
+    "img": "/assets/img/projects/banners/vm-spaces.jpg", "fit": "cover", "cover": true, "alt": "Cover graphic: concentric gallery arches",
     "linkLabel": "On vimersive.studio"
   }
 ]
