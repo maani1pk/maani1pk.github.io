@@ -14,7 +14,7 @@ window.SITE = {
   // International format, digits only: country code + number, with no "+", spaces, dashes or leading zeros.
   // Example format (not a real number): '15551234567'
   // While this is empty, the WhatsApp buttons stay hidden and the email button becomes the main one.
-  whatsappNumber: '',
+  whatsappNumber: '923204005445',
 
   // >>> SUPABASE (client database and /admin login): set these two values after following _src/crm/CRM_SETUP.md <<<
   // Both are PUBLIC by design: the "Project URL" and the "anon public" key from Supabase > Project Settings > API.
