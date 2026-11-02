@@ -38,7 +38,10 @@
     opts = opts || {};
     var ctl = typeof AbortController === 'function' ? new AbortController() : null;
     var timer = ctl ? setTimeout(function () { ctl.abort(); }, opts.timeout || 15000) : null;
-    var headers = { apikey: anon, Authorization: 'Bearer ' + (opts.auth === false ? anon : (session && session.access_token) || anon), 'Content-Type': 'application/json' };
+    var headers = { apikey: anon, 'Content-Type': 'application/json' };
+    var token = opts.auth === false ? null : session && session.access_token;
+    // Legacy anon keys are JWTs and go in Authorization too; new publishable keys (sb_publishable_…) are not JWTs and go only in apikey.
+    if (token) headers.Authorization = 'Bearer ' + token; else if (anon.indexOf('eyJ') === 0) headers.Authorization = 'Bearer ' + anon;
     if (opts.prefer) headers.Prefer = opts.prefer;
     return fetch(base + path, { method: opts.method || 'GET', headers: headers, body: opts.body ? JSON.stringify(opts.body) : undefined, signal: ctl ? ctl.signal : undefined })
       .then(function (res) {

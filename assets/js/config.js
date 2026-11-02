@@ -20,8 +20,8 @@ window.SITE = {
   // Both are PUBLIC by design: the "Project URL" and the "anon public" key from Supabase > Project Settings > API.
   // What they can do is limited by the database rules. NEVER paste the service_role key here.
   // While empty, the contact form keeps working as before (WhatsApp / email) and /admin shows a setup notice.
-  supabaseUrl: '',
-  supabaseAnonKey: '',
+  supabaseUrl: 'https://shjyopgvsatrvmzvibrw.supabase.co',
+  supabaseAnonKey: 'sb_publishable_gEiEBAmS3oSuJeAxkBdx5A_Tm1omuo8',
 
   accent: '#FF8A4C', // also --r1 / --accent in assets/css/site.css
 
