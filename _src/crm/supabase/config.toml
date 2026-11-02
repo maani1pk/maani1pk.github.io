@@ -1,0 +1,4 @@
+# Used by the Supabase CLI when deploying from _src/crm:  supabase functions deploy sync-sheets
+# The function does its own authorisation (webhook secret or admin login), so the default JWT check is switched off for it.
+[functions.sync-sheets]
+verify_jwt = false

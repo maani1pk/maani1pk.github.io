@@ -16,6 +16,13 @@ window.SITE = {
   // While this is empty, the WhatsApp buttons stay hidden and the email button becomes the main one.
   whatsappNumber: '',
 
+  // >>> SUPABASE (client database and /admin login): set these two values after following _src/crm/CRM_SETUP.md <<<
+  // Both are PUBLIC by design: the "Project URL" and the "anon public" key from Supabase > Project Settings > API.
+  // What they can do is limited by the database rules. NEVER paste the service_role key here.
+  // While empty, the contact form keeps working as before (WhatsApp / email) and /admin shows a setup notice.
+  supabaseUrl: '',
+  supabaseAnonKey: '',
+
   accent: '#FF8A4C', // also --r1 / --accent in assets/css/site.css
 
   vimersive: {

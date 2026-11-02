@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 Sitemap: https://maani1pk.github.io/sitemap.xml
 Sitemap: https://maani1pk.github.io/skyfang/sitemap.xml
