@@ -8,7 +8,7 @@ window.SITE = {
   personName: 'Abdur Rehman Arshad',
   studioName: 'Abdur Studio',
   studioEmail: 'maani1pk@gmail.com',
-  accent: '#2DD4EE', // also --accent in assets/css/site.css
+  accent: '#FF8A4C', // also --r1 / --accent in assets/css/site.css
 
   vimersive: {
     name: 'Vimersive Studio',

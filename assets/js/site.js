@@ -1,21 +1,9 @@
 (function () {
   'use strict';
   var SITE = window.SITE || {};
-  var PROJECTS = window.PROJECTS || [];
-
-  var STATUS = {
-    released: ['Released', 'chip--live'],
-    soon: ['Coming soon', 'chip--soon'],
-    dev: ['In development', 'chip--dev'],
-    prototype: ['Prototype', 'chip--proto'],
-    client: ['Client work', 'chip--client']
-  };
-  var OWNER = { personal: 'Personal product', vimersive: 'Vimersive Studio' };
-
   var root = document.documentElement;
   var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var FINE = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var reveal = function () {}; // replaced by motion() when motion is allowed
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -51,108 +39,72 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   }
 
-  function card(p, i) {
-    var a = el('article', 'card');
-    if (p.img) {
-      var fig = el('div', 'card__media' + (p.imgFit === 'phone' ? ' card__media--phone' : ''));
-      var img = el('img');
-      img.src = p.img; img.alt = p.alt || p.name; img.loading = 'lazy'; img.decoding = 'async';
-      fig.appendChild(img);
-      fig.appendChild(el('span', 'card__idx', (i < 9 ? '0' : '') + (i + 1)));
-      if (p.live) fig.appendChild(el('span', 'card__live', 'Live on the App Store'));
-      if (p.link) { var cue = el('span', 'card__cue', p.link.indexOf('http') === 0 ? '↗' : '→'); cue.setAttribute('aria-hidden', 'true'); fig.appendChild(cue); }
-      a.appendChild(fig);
-      if (p.stock) a.appendChild(el('p', 'card__note', 'Illustrative stock photo · captures coming soon'));
-    } else {
-      var empty = el('div', 'card__media card__media--empty', p.name);
-      empty.appendChild(el('span', 'card__idx', (i < 9 ? '0' : '') + (i + 1)));
-      a.appendChild(empty);
-    }
-    var body = el('div', 'card__body');
-    var chips = el('div', 'chips');
-    var st = STATUS[p.status] || STATUS.dev;
-    chips.appendChild(el('span', 'chip ' + st[1], p.statusLabel || st[0]));
-    chips.appendChild(el('span', 'chip', OWNER[p.owner] || ''));
-    body.appendChild(chips);
-    body.appendChild(el('h3', 'card__title', p.name));
-    body.appendChild(el('p', 'card__desc', p.desc));
-    var dl = el('dl', 'card__meta');
-    [['Platform', p.platform], ['Tech', p.tech], ['Role', p.role]].forEach(function (r) {
-      if (!r[1]) return;
-      dl.appendChild(el('dt', null, r[0]));
-      dl.appendChild(el('dd', null, r[1]));
-    });
-    body.appendChild(dl);
-    var actions = p.store ? el('div', 'card__actions') : body;
-    if (p.link) {
-      var l = el('a', 'card__link', (p.linkLabel || 'View project') + (/^https?:/.test(p.link) ? ' ↗' : ' →'));
-      l.href = p.link;
-      l.setAttribute('aria-label', (p.linkLabel || 'View project') + ': ' + p.name);
-      actions.appendChild(l);
-    }
-    if (p.store) {
-      var storeName = p.storeName || 'App Store';
-      var s = el('a', 'btn-store');
-      s.href = p.store;
-      s.rel = 'noopener';
-      s.setAttribute('aria-label', 'Download ' + p.name + ' on ' + (p.storeName ? '' : 'the ') + storeName);
-      s.appendChild(el('small', null, p.storeName ? 'Get it on' : 'Download on the'));
-      s.appendChild(el('strong', null, storeName));
-      actions.appendChild(s);
-      body.appendChild(actions);
-    }
-    if (p.privacy) {
-      var pv = el('a', 'card__privacy', 'Privacy policy');
-      pv.href = p.privacy;
-      pv.setAttribute('aria-label', 'Privacy policy: ' + p.name);
-      body.appendChild(pv);
-    }
-    a.appendChild(body);
-    return a;
-  }
-
-  function renderFeatured() {
-    var box = document.getElementById('featured-projects');
-    if (!box) return;
-    PROJECTS.filter(function (p) { return p.featured; }).forEach(function (p, i) { box.appendChild(card(p, i)); });
-    reveal(Array.prototype.slice.call(box.children));
-  }
-
-  function renderPortfolio() {
+  // /work/ filters: the links work without JavaScript (they go to category pages);
+  // with JavaScript the cards are filtered in place, with a short fade and no reload.
+  function projectFilter() {
     var grid = document.getElementById('project-grid');
     var bar = document.getElementById('project-filters');
-    var count = document.getElementById('project-count');
-    var empty = document.getElementById('project-empty');
     if (!grid || !bar) return;
-    var buttons = [];
+    var links = Array.prototype.slice.call(bar.querySelectorAll('.filter[data-filter]'));
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+    var count = document.getElementById('project-count');
+    var empty = document.getElementById('empty-filter');
+    var LEGACY = { kids: 'apps', training: 'vr', i3d: 'interactive', client: 'all', proto: 'all' };
+    var NAMES = {};
+    links.forEach(function (l) { NAMES[l.getAttribute('data-filter')] = l.textContent.replace(/\d+\s*$/, '').trim(); });
+    var timer;
 
-    function show(cat) {
-      grid.textContent = '';
-      var list = PROJECTS.filter(function (p) { return cat === 'all' || p.cats.indexOf(cat) !== -1; });
-      list.forEach(function (p, i) { grid.appendChild(card(p, i)); });
-      reveal(Array.prototype.slice.call(grid.children));
-      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.cat === cat)); });
-      count.textContent = list.length + (list.length === 1 ? ' project' : ' projects');
-      empty.hidden = list.length !== 0;
+    function apply(cat) {
+      var shown = 0;
+      clearTimeout(timer);
+      cards.forEach(function (c) {
+        var match = cat === 'all' || c.getAttribute('data-cats').split(' ').indexOf(cat) !== -1;
+        if (match) shown++;
+        if (REDUCE) { c.hidden = !match; return; }
+        if (match) {
+          if (c.hidden) { c.hidden = false; void c.offsetWidth; }
+          c.classList.remove('is-out');
+        } else {
+          c.classList.add('is-out');
+        }
+      });
+      if (!REDUCE) {
+        timer = setTimeout(function () {
+          cards.forEach(function (c) {
+            var match = cat === 'all' || c.getAttribute('data-cats').split(' ').indexOf(cat) !== -1;
+            c.hidden = !match;
+          });
+        }, 360);
+      }
+      links.forEach(function (l) {
+        if (l.getAttribute('data-filter') === cat) l.setAttribute('aria-current', 'page');
+        else l.removeAttribute('aria-current');
+      });
+      if (count) count.textContent = shown + (shown === 1 ? ' project' : ' projects');
+      if (empty) {
+        empty.hidden = shown !== 0;
+        var h = empty.querySelector('h3');
+        if (h) h.textContent = 'Case studies for ' + (NAMES[cat] || 'this category') + ' are in preparation';
+      }
     }
 
-    (window.PROJECT_FILTERS || []).forEach(function (f) {
-      var b = el('button', 'filter', f[1]);
-      b.type = 'button';
-      b.dataset.cat = f[0];
-      b.addEventListener('click', function () {
-        show(f[0]);
-        history.replaceState(null, '', f[0] === 'all' ? location.pathname : '#' + f[0]);
-      });
-      buttons.push(b);
-      bar.appendChild(b);
-    });
     function fromHash() {
       var h = location.hash.slice(1);
-      show(buttons.some(function (b) { return b.dataset.cat === h; }) ? h : 'all');
+      h = LEGACY[h] || h;
+      apply(NAMES[h] ? h : 'all');
     }
+
+    links.forEach(function (l) {
+      l.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+        var cat = l.getAttribute('data-filter');
+        apply(cat);
+        history.replaceState(null, '', cat === 'all' ? location.pathname : '#' + cat);
+      });
+    });
     window.addEventListener('hashchange', fromHash);
-    fromHash();
+    if (location.hash) fromHash();
   }
 
   // No backend: the form builds a mailto: link and opens the visitor's email app.
@@ -268,7 +220,7 @@
 
     // headings: split into words so they can rise in one by one
     if (!REDUCE) {
-      Array.prototype.slice.call(document.querySelectorAll('.h2, main > h1, .contact__info > h1'))
+      Array.prototype.slice.call(document.querySelectorAll('.h2, main > h1, .page-head .h1, .contact__info > h1'))
         .filter(function (n) { return !n.classList.contains('hero-title'); })
         .forEach(splitWords);
     }
@@ -287,7 +239,7 @@
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 }) : null;
 
     function watch(n) { if (io) io.observe(n); else n.classList.add('in'); }
-    reveal = function (nodes) {
+    function reveal(nodes) {
       nodes.forEach(function (n, i) {
         if (!n.classList.contains('rv')) {
           n.classList.add('rv');
@@ -295,11 +247,11 @@
         }
         watch(n);
       });
-    };
+    }
     document.querySelectorAll('.stxt').forEach(watch);
     reveal(Array.prototype.slice.call(document.querySelectorAll(
-      '.section-head, .split > *, .steps li, .gallery figure, .cta, .strip li, .stats > div, .features > *, ' +
-      '.service, .tags, .contact__info > *, .form, main > .eyebrow, main > .lead, .filters, .feature, .mega, .hero__copy > .rv')));
+      '.section-head, .disc li, .card, .tech > div, .split > *, .steps li, .gallery figure, .cta, .strip li, .stats > div, .features > *, ' +
+      '.service, .tags, .contact__info > *, .form, .page-head > *, .cat-head .wrap > *, .pj__copy > *, .mega, .hero__copy > .rv')));
 
     // fail-safe: never leave content hidden if an observer callback is missed
     setTimeout(function () {
@@ -315,8 +267,7 @@
   applyBrand();
   navToggle();
   motion();
-  renderFeatured();
-  renderPortfolio();
+  projectFilter();
   contactForm();
   document.querySelectorAll('[data-year]').forEach(function (n) { n.textContent = new Date().getFullYear(); });
 })();

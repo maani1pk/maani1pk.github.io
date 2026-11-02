@@ -1,0 +1,215 @@
+[
+  {
+    "id": "skyfang", "name": "Skyfang: Airplane Games", "featured": true, "page": "/work/skyfang/",
+    "cats": ["games"], "status": "released", "statusLabel": "Published · App Store", "owner": "vimersive",
+    "platforms": ["iOS (iPhone & iPad)"], "tech": ["Unity", "C#"], "role": "Mobile game development",
+    "tagline": "Arcade air combat for iPhone and iPad.",
+    "desc": "Arcade air combat for iPhone and iPad: 38 missions across 8 worlds, multi-phase boss fights and 6 upgradable jets.",
+    "img": "/assets/img/skyfang/boss.jpg", "fit": "cover", "alt": "Skyfang boss aircraft battle",
+    "linkLabel": "Read the case study",
+    "store": "https://apps.apple.com/us/app/skyfang-airplane-games/id6825618120", "storeName": "App Store"
+  },
+  {
+    "id": "tennis-ball-master-3d", "name": "Tennis Ball Master 3D", "featured": true,
+    "cats": ["games"], "status": "released", "statusLabel": "Published · App Store", "owner": "personal",
+    "platforms": ["iOS (iPhone & iPad)"], "tech": ["Unity", "C#", "3D physics"], "role": "Developer & publisher",
+    "tagline": "3D tennis with spin, slices, drop shots and smashes.",
+    "desc": "3D tennis for iPhone and iPad with drag-and-swipe controls, topspin, slice, drop shots and smashes, several court surfaces and upgradable rackets.",
+    "details": [
+      "Tennis Ball Master 3D has been on the App Store since October 2025 (version 1.0). Matches are played with simple drag-and-swipe shots, and every hit lets you shape spin, speed and placement.",
+      "A larger update is in development: new game modes, a career mode and missions."
+    ],
+    "highlights": ["Live on the App Store (version 1.0, universal iPhone and iPad)", "Grass, clay and hard court surfaces", "Topspin, slice, drop shot and smash", "Update with new modes and a career mode in development"],
+    "img": "/assets/img/projects/tennis-ball-master-3d/title.jpg", "fit": "phone", "alt": "Tennis Ball Master 3D title screen with two players on a clay court",
+    "gallery": [["/assets/img/projects/tennis-ball-master-3d/shot-2.jpg", "Tennis Ball Master 3D gameplay"], ["/assets/img/projects/tennis-ball-master-3d/shot-3.jpg", "Tennis Ball Master 3D match screen"]],
+    "linkLabel": "See the project",
+    "store": "https://apps.apple.com/us/app/tennis-ball-master-3d/id6754083207", "storeName": "App Store"
+  },
+  {
+    "id": "bandpulse", "name": "BandPulse: Piano Rhythm Game", "featured": true, "page": "/bandpulse/",
+    "cats": ["games"], "status": "soon", "statusLabel": "Coming soon · Google Play & App Store", "owner": "personal",
+    "platforms": ["Android", "iPhone"], "tech": ["Unity", "C#", "DSP-clock rhythm engine"], "role": "Solo developer",
+    "tagline": "One song, every instrument.",
+    "desc": "One song, every instrument: piano, guitar, drums and DJ, 12 original songs and a 60-level World Tour.",
+    "img": "/bandpulse/assets/img/shot-piano.jpg", "fit": "phone", "alt": "BandPulse Piano Rush gameplay",
+    "linkLabel": "Official game site"
+  },
+  {
+    "id": "ludo-royale", "name": "Ludo Royale", "featured": false,
+    "cats": ["games"], "status": "dev", "owner": "personal",
+    "platforms": ["Android"], "tech": ["Unity 2022.3", "C#", "ASP.NET Core WebSockets"], "role": "Solo developer",
+    "tagline": "Ludo and Snakes & Ladders on a 3D tabletop, online.",
+    "desc": "Ludo and Snakes & Ladders on a 3D tabletop with online multiplayer, backed by an authoritative C# game server.",
+    "details": [
+      "Ludo Royale plays both classic board games on a 3D tabletop. The game rules live in plain C# and are shared by the Unity client and the server, so online matches follow exactly the same rules as local ones.",
+      "All game modes are playable and covered by automated tests on the rules and the server. It currently builds as an Android development build; ads and purchases are not connected yet."
+    ],
+    "highlights": ["Rules engine shared by client and server", "Team, Chaos and Race rule variants for Ludo", "Authoritative server over WebSockets", "Automated tests for rules, server and Unity play"],
+    "img": "/assets/img/projects/ludo-royale/cover.jpg", "fit": "cover", "cover": true, "alt": "Cover graphic: a Ludo board in four colours"
+  },
+  {
+    "id": "echo-rush", "name": "Echo Rush", "featured": false,
+    "cats": ["games"], "status": "dev", "owner": "personal",
+    "platforms": ["PC", "Android"], "tech": ["Unity 2022.3", "C#", "Networked multiplayer"], "role": "Solo developer",
+    "tagline": "A colourful multiplayer party game.",
+    "desc": "A colourful party game with 14 modes across 11 generated stages, with a PC host and phone clients playing together.",
+    "details": [
+      "Echo Rush is a fast, colourful party game in the spirit of obstacle-course battle games: many short modes played across generated stages.",
+      "Version 0.2.0 is playable. A PC host with a phone client has been tested together over Wi-Fi."
+    ],
+    "highlights": ["14 game modes", "11 generated stage scenes", "PC host and Android client tested over Wi-Fi"],
+    "img": "/assets/img/projects/echo-rush/cover.jpg", "fit": "cover", "cover": true, "alt": "Cover graphic: echo rings and a stage track"
+  },
+  {
+    "id": "shadow-shift", "name": "Shadow Shift", "featured": false,
+    "cats": ["games"], "status": "dev", "owner": "personal",
+    "platforms": ["Android", "iOS"], "tech": ["Unity 2022.3", "C#", "Procedural art and audio"], "role": "Solo developer",
+    "tagline": "A one-tap game about flipping between light and shadow.",
+    "desc": "A one-tap hopper: tap to flip between the light and shadow worlds and land only on solid shapes.",
+    "details": [
+      "Shadow Shift is a minimal one-tap game. Each tap flips the world between light and shadow, and your character can only land on shapes that are solid in the current world.",
+      "Everything is made in code: sprites, icons and sound effects are generated, and a fairness solver checks every generated level. It has been tested on a Galaxy S21."
+    ],
+    "highlights": ["Every sprite and sound generated in code", "Level generator checked by a fairness solver", "Automated logic tests and on-device testing"],
+    "img": "/assets/img/projects/shadow-shift/play.jpg", "fit": "phone", "alt": "Shadow Shift gameplay: a glowing ball and purple platforms",
+    "gallery": [["/assets/img/projects/shadow-shift/menu.jpg", "Shadow Shift menu"], ["/assets/img/projects/shadow-shift/campaign.jpg", "Shadow Shift campaign screen"]]
+  },
+  {
+    "id": "pocketpet", "name": "Pocket Pet Glow", "featured": false,
+    "cats": ["games"], "status": "dev", "owner": "personal",
+    "platforms": ["Android"], "tech": ["Unity", "C#", "In-app purchases"], "role": "Solo developer",
+    "tagline": "Care for virtual pets across habitats.",
+    "desc": "A virtual pet game: feed, bathe and care for animals across habitats.",
+    "img": "/assets/img/projects/pocket-pet-glow.jpg", "fit": "phone", "alt": "Pocket Pet Glow pet care screen"
+  },
+  {
+    "id": "boat-racing", "name": "Boat racing prototype", "featured": false,
+    "cats": ["games"], "status": "prototype", "owner": "personal",
+    "platforms": ["Android"], "tech": ["Unity", "Built on Unity's Boat Attack sample"], "role": "Gameplay and mobile build",
+    "tagline": "A racing mode built on Unity's open Boat Attack sample.",
+    "desc": "A racing mode built on top of Unity's open Boat Attack sample.",
+    "details": ["This is an experiment on top of Unity's open-source Boat Attack project, adapted to build and run on Android. The base boats, water and tracks belong to Unity's sample; the gameplay and mobile build work are mine."],
+    "img": "/assets/img/projects/stock-speedboat.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a speedboat on open water"
+  },
+  {
+    "id": "vpn-super", "name": "VPN Super Free", "featured": true, "page": "/vpn-super/",
+    "cats": ["apps"], "status": "soon", "statusLabel": "Update 1.3 · HUAWEI AppGallery", "owner": "personal",
+    "platforms": ["Android", "HUAWEI AppGallery"], "tech": ["Unity", "Java VpnService", "Xray-core"], "role": "Solo developer",
+    "tagline": "One-tap VPN that only says Protected once traffic really flows.",
+    "desc": "One-tap VPN that picks the fastest server and only says “Protected” after traffic really flows. Split tunnelling, live exit-IP check, server switching without dropping.",
+    "img": "/vpn-super/assets/img/shot-protected.jpg", "fit": "phone", "alt": "VPN Super protected screen with a German exit IP",
+    "linkLabel": "View website",
+    "store": "https://appgallery.huawei.com/app/C108355249", "storeName": "HUAWEI AppGallery",
+    "privacy": "/vpn-super/privacy-policy.html"
+  },
+  {
+    "id": "brushlark", "name": "Brushlark: AR Tracing Camera", "featured": true,
+    "cats": ["ar", "apps"], "status": "dev", "owner": "personal",
+    "platforms": ["Android"], "tech": ["Unity 2022.3", "C#", "Live camera overlay", "Google Mobile Ads", "Unity IAP"], "role": "Solo developer",
+    "tagline": "Trace sketches onto real paper through your phone camera.",
+    "desc": "Trace a sketch onto real paper through your phone camera, or draw on screen. 70 original sketches and 40 step-by-step drawing lessons.",
+    "details": [
+      "Brushlark puts a sketch over the live camera view so you can trace it onto paper. You can move, scale, rotate, lock and fade the sketch, then draw it by hand. Or draw directly on screen with pencil, pen, brush and eraser, with undo, redo and PNG export.",
+      "A Drawing School adds 40 guided lessons that build each picture in stages. The app has been installed and checked on a Galaxy S21; store release and iOS are still to come."
+    ],
+    "highlights": ["70 original sketches in 11 categories", "40 step-by-step lessons", "Tracing camera with lock, opacity, size and rotate", "Remove-ads purchase and consent flow built in"],
+    "img": "/assets/img/projects/brushlark/trace.jpg", "fit": "phone", "alt": "Brushlark lesson screen with a portrait and step thumbnails",
+    "gallery": [["/assets/img/projects/brushlark/home.jpg", "Brushlark home screen"], ["/assets/img/projects/brushlark/sketches.jpg", "Brushlark sketch library"], ["/assets/img/projects/brushlark/learn.jpg", "Brushlark Drawing School"]]
+  },
+  {
+    "id": "tinyzoo", "name": "TinyZoo Colors", "featured": false,
+    "cats": ["apps"], "status": "dev", "owner": "personal",
+    "platforms": ["iOS", "Android"], "tech": ["Unity", "Procedural art", "Child-directed ads setup"], "role": "Solo developer",
+    "tagline": "Toddler animal coloring.",
+    "desc": "Toddler animal coloring with smoothed Catmull-Rom brush paths.",
+    "img": "/assets/img/projects/tinyzoo-colors.jpg", "fit": "phone", "alt": "TinyZoo Colors app icon designs"
+  },
+  {
+    "id": "colorsprout", "name": "ColorSprout Kids", "featured": false,
+    "cats": ["apps"], "status": "dev", "owner": "personal",
+    "platforms": ["Android"], "tech": ["Unity 2022.3"], "role": "Solo developer",
+    "tagline": "A coloring game for kids with its own design system.",
+    "desc": "A coloring game for kids with its own design system.",
+    "img": "/assets/img/projects/colorsprout-kids.jpg", "fit": "phone", "alt": "ColorSprout Kids coloring studio screen"
+  },
+  {
+    "id": "tinytrace", "name": "TinyTrace Kids", "featured": false,
+    "cats": ["apps"], "status": "dev", "owner": "personal",
+    "platforms": ["Android"], "tech": ["Unity", "Data-driven level generation"], "role": "Solo developer",
+    "tagline": "Tracing and drawing mini-games for young kids.",
+    "desc": "Tracing and drawing mini-games for young kids, with 870 generated levels.",
+    "img": "/assets/img/projects/tinytrace-kids.jpg", "fit": "phone", "alt": "TinyTrace Kids letter tracing screen"
+  },
+  {
+    "id": "hearthly", "name": "Hearthly", "featured": false,
+    "cats": ["ar"], "status": "dev", "owner": "personal",
+    "platforms": ["Android"], "tech": ["Unity", "AR Foundation"], "role": "Solo developer",
+    "tagline": "Place home décor in your own room with AR.",
+    "desc": "Place home décor in your own room with AR.",
+    "img": "/assets/img/projects/hearthly.jpg", "fit": "phone", "alt": "Hearthly design hub screen"
+  },
+  {
+    "id": "darkroom-ar", "name": "DarkRoom AR", "featured": false,
+    "cats": ["ar"], "status": "prototype", "owner": "personal",
+    "platforms": ["Android (ARM64)"], "tech": ["Unity", "AR Foundation", "ARCore face tracking"], "role": "Solo developer",
+    "tagline": "An AR face-filter app.",
+    "desc": "An AR face-filter app built on ARCore face tracking and tested on a Galaxy S21.",
+    "img": "/assets/img/projects/darkroom-ar.jpg", "fit": "phone", "alt": "DarkRoom AR explore screen"
+  },
+  {
+    "id": "punchverse", "name": "PunchVerse VR", "featured": true,
+    "cats": ["vr", "mr"], "status": "dev", "owner": "personal",
+    "platforms": ["Meta Quest 3"], "tech": ["Unity", "OpenXR", "Mixed reality passthrough"], "role": "Solo developer",
+    "tagline": "Boxing and fitness for Quest 3, including a mixed-reality mode.",
+    "desc": "Boxing and fitness for Quest 3, including a mixed-reality mode.",
+    "img": "/assets/img/projects/stock-vr-fitness.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a player in a VR headset with hands raised"
+  },
+  {
+    "id": "vr-art-studio", "name": "VR Art Studio", "featured": false,
+    "cats": ["vr"], "status": "dev", "owner": "personal",
+    "platforms": ["Meta Quest"], "tech": ["Unity", "URP", "OpenXR", "XR Interaction Toolkit"], "role": "Solo developer",
+    "tagline": "Paint and sculpt in virtual reality.",
+    "desc": "Painting and sculpting in virtual reality with 10 brushes, a gallery you can walk through and a library of your creations.",
+    "details": [
+      "VR Art Studio is a Quest creative tool: paint in the air with ten brushes, build sculptures from shapes and voxels, and show your work in themed galleries you can teleport around.",
+      "A development build runs through every screen in automated tests. Testing on a headset is the next milestone, so it is not released yet."
+    ],
+    "highlights": ["10 brushes with undo, redo and autosave", "Sculpting from primitives and voxels", "Three themed galleries with teleport", "Automated UI and logic tests"],
+    "img": "/assets/img/projects/stock-vr-create.jpg", "fit": "cover", "stock": true, "alt": "Illustrative photo: a person in a VR headset reaching out"
+  },
+  {
+    "id": "vm-booths", "name": "3D Exhibition Booths", "featured": false,
+    "cats": ["interactive"], "status": "client", "owner": "vimersive", "external": "https://vimersive.studio",
+    "platforms": ["Web", "Renders"], "tech": ["3D modelling"], "role": "CEO and studio lead",
+    "tagline": "Exhibition booth design and visualisation.",
+    "desc": "Exhibition booth design and visualisation.",
+    "img": "/assets/img/vimersive/exhibition-booth.jpg", "fit": "cover", "alt": "Vimersive 3D exhibition booth render",
+    "linkLabel": "On vimersive.studio"
+  },
+  {
+    "id": "vm-interior", "name": "Interior Render 3D", "featured": false,
+    "cats": ["interactive"], "status": "client", "owner": "vimersive", "external": "https://vimersive.studio",
+    "platforms": ["Renders"], "tech": ["3D modelling", "Rendering"], "role": "CEO and studio lead",
+    "tagline": "Interior visualisation.",
+    "desc": "Interior visualisation.",
+    "img": "/assets/img/vimersive/interior-render.jpg", "fit": "cover", "alt": "Vimersive interior room render",
+    "linkLabel": "On vimersive.studio"
+  },
+  {
+    "id": "vm-lums", "name": "LUMS VR · LUMS 3D", "featured": false,
+    "cats": ["vr", "interactive"], "status": "client", "owner": "vimersive", "external": "https://vimersive.studio",
+    "platforms": ["VR", "3D"], "tech": ["Details coming soon"], "role": "CEO and studio lead",
+    "tagline": "Virtual reality and 3D campus work.",
+    "desc": "Virtual reality and 3D campus work from Vimersive's portfolio.",
+    "img": "/assets/img/vimersive/lums.jpg", "fit": "cover", "alt": "Vimersive 3D visualisation project",
+    "linkLabel": "On vimersive.studio"
+  },
+  {
+    "id": "vm-spaces", "name": "Cabin 3D · 3D Round Art Gallery", "featured": false,
+    "cats": ["interactive"], "status": "client", "owner": "vimersive", "external": "https://vimersive.studio",
+    "platforms": ["3D"], "tech": ["Details coming soon"], "role": "CEO and studio lead",
+    "tagline": "Further 3D spaces.",
+    "desc": "Further 3D spaces from Vimersive's portfolio.",
+    "linkLabel": "On vimersive.studio"
+  }
+]
