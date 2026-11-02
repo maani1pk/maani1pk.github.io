@@ -20,7 +20,7 @@
       "A larger update is in development: new game modes, a career mode and missions."
     ],
     "highlights": ["Live on the App Store (version 1.0, universal iPhone and iPad)", "Grass, clay and hard court surfaces", "Topspin, slice, drop shot and smash", "Update with new modes and a career mode in development"],
-    "img": "/assets/img/projects/tennis-ball-master-3d/title.jpg", "fit": "phone", "alt": "Tennis Ball Master 3D title screen with two players on a clay court",
+    "img": "/assets/img/projects/banners/tennis-ball-master-3d.jpg", "fit": "cover", "alt": "Tennis Ball Master 3D screens on a clay-orange background",
     "gallery": [["/assets/img/projects/tennis-ball-master-3d/shot-2.jpg", "Tennis Ball Master 3D gameplay"], ["/assets/img/projects/tennis-ball-master-3d/shot-3.jpg", "Tennis Ball Master 3D match screen"]],
     "linkLabel": "See the project",
     "store": "https://apps.apple.com/us/app/tennis-ball-master-3d/id6754083207", "storeName": "App Store"
@@ -31,7 +31,7 @@
     "platforms": ["Android", "iPhone"], "tech": ["Unity", "C#", "DSP-clock rhythm engine"], "role": "Solo developer",
     "tagline": "One song, every instrument.",
     "desc": "One song, every instrument: piano, guitar, drums and DJ, 12 original songs and a 60-level World Tour.",
-    "img": "/bandpulse/assets/img/shot-piano.jpg", "fit": "phone", "alt": "BandPulse Piano Rush gameplay",
+    "img": "/assets/img/projects/banners/bandpulse.jpg", "fit": "cover", "alt": "BandPulse: One song. Every instrument.",
     "linkLabel": "Official game site"
   },
   {
@@ -71,7 +71,7 @@
       "Everything is made in code: sprites, icons and sound effects are generated, and a fairness solver checks every generated level. It has been tested on a Galaxy S21."
     ],
     "highlights": ["Every sprite and sound generated in code", "Level generator checked by a fairness solver", "Automated logic tests and on-device testing"],
-    "img": "/assets/img/projects/shadow-shift/play.jpg", "fit": "phone", "alt": "Shadow Shift gameplay: a glowing ball and purple platforms",
+    "img": "/assets/img/projects/banners/shadow-shift.jpg", "fit": "cover", "alt": "Shadow Shift menu, gameplay and campaign screens",
     "gallery": [["/assets/img/projects/shadow-shift/menu.jpg", "Shadow Shift menu"], ["/assets/img/projects/shadow-shift/campaign.jpg", "Shadow Shift campaign screen"]]
   },
   {
@@ -80,7 +80,7 @@
     "platforms": ["Android"], "tech": ["Unity", "C#", "In-app purchases"], "role": "Solo developer",
     "tagline": "Care for virtual pets across habitats.",
     "desc": "A virtual pet game: feed, bathe and care for animals across habitats.",
-    "img": "/assets/img/projects/pocket-pet-glow.jpg", "fit": "phone", "alt": "Pocket Pet Glow pet care screen"
+    "img": "/assets/img/projects/banners/pocketpet.jpg", "fit": "cover", "alt": "Pocket Pet Glow care screen on a pink background"
   },
   {
     "id": "boat-racing", "name": "Boat racing prototype", "featured": false,
@@ -97,7 +97,7 @@
     "platforms": ["Android", "HUAWEI AppGallery"], "tech": ["Unity", "Java VpnService", "Xray-core"], "role": "Solo developer",
     "tagline": "One-tap VPN that only says Protected once traffic really flows.",
     "desc": "One-tap VPN that picks the fastest server and only says “Protected” after traffic really flows. Split tunnelling, live exit-IP check, server switching without dropping.",
-    "img": "/vpn-super/assets/img/shot-protected.jpg", "fit": "phone", "alt": "VPN Super protected screen with a German exit IP",
+    "img": "/assets/img/projects/banners/vpn-super.jpg", "fit": "cover", "alt": "VPN Super home, protected and locations screens",
     "linkLabel": "View website",
     "store": "https://appgallery.huawei.com/app/C108355249", "storeName": "HUAWEI AppGallery",
     "privacy": "/vpn-super/privacy-policy.html"
@@ -113,7 +113,7 @@
       "A Drawing School adds 40 guided lessons that build each picture in stages. The app has been installed and checked on a Galaxy S21; store release and iOS are still to come."
     ],
     "highlights": ["70 original sketches in 11 categories", "40 step-by-step lessons", "Tracing camera with lock, opacity, size and rotate", "Remove-ads purchase and consent flow built in"],
-    "img": "/assets/img/projects/brushlark/trace.jpg", "fit": "phone", "alt": "Brushlark lesson screen with a portrait and step thumbnails",
+    "img": "/assets/img/projects/banners/brushlark.jpg", "fit": "cover", "alt": "Brushlark home, tracing and sketch library screens",
     "gallery": [["/assets/img/projects/brushlark/home.jpg", "Brushlark home screen"], ["/assets/img/projects/brushlark/sketches.jpg", "Brushlark sketch library"], ["/assets/img/projects/brushlark/learn.jpg", "Brushlark Drawing School"]]
   },
   {
@@ -122,7 +122,7 @@
     "platforms": ["iOS", "Android"], "tech": ["Unity", "Procedural art", "Child-directed ads setup"], "role": "Solo developer",
     "tagline": "Toddler animal coloring.",
     "desc": "Toddler animal coloring with smoothed Catmull-Rom brush paths.",
-    "img": "/assets/img/projects/tinyzoo-colors.jpg", "fit": "phone", "alt": "TinyZoo Colors app icon designs"
+    "img": "/assets/img/projects/banners/tinyzoo.jpg", "fit": "cover", "alt": "TinyZoo Colors icon artwork: rainbow deer, lion, panda and safari friends"
   },
   {
     "id": "colorsprout", "name": "ColorSprout Kids", "featured": false,
@@ -130,7 +130,7 @@
     "platforms": ["Android"], "tech": ["Unity 2022.3"], "role": "Solo developer",
     "tagline": "A coloring game for kids with its own design system.",
     "desc": "A coloring game for kids with its own design system.",
-    "img": "/assets/img/projects/colorsprout-kids.jpg", "fit": "phone", "alt": "ColorSprout Kids coloring studio screen"
+    "img": "/assets/img/projects/banners/colorsprout.jpg", "fit": "cover", "alt": "ColorSprout Kids coloring screen on a yellow background"
   },
   {
     "id": "tinytrace", "name": "TinyTrace Kids", "featured": false,
@@ -138,7 +138,7 @@
     "platforms": ["Android"], "tech": ["Unity", "Data-driven level generation"], "role": "Solo developer",
     "tagline": "Tracing and drawing mini-games for young kids.",
     "desc": "Tracing and drawing mini-games for young kids, with 870 generated levels.",
-    "img": "/assets/img/projects/tinytrace-kids.jpg", "fit": "phone", "alt": "TinyTrace Kids letter tracing screen"
+    "img": "/assets/img/projects/banners/tinytrace.jpg", "fit": "cover", "alt": "TinyTrace Kids letter tracing screen on a blue background"
   },
   {
     "id": "hearthly", "name": "Hearthly", "featured": false,
@@ -146,7 +146,7 @@
     "platforms": ["Android"], "tech": ["Unity", "AR Foundation"], "role": "Solo developer",
     "tagline": "Place home décor in your own room with AR.",
     "desc": "Place home décor in your own room with AR.",
-    "img": "/assets/img/projects/hearthly.jpg", "fit": "phone", "alt": "Hearthly design hub screen"
+    "img": "/assets/img/projects/banners/hearthly.jpg", "fit": "cover", "alt": "Hearthly design studio screen on a sage background"
   },
   {
     "id": "darkroom-ar", "name": "DarkRoom AR", "featured": false,
@@ -154,7 +154,7 @@
     "platforms": ["Android (ARM64)"], "tech": ["Unity", "AR Foundation", "ARCore face tracking"], "role": "Solo developer",
     "tagline": "An AR face-filter app.",
     "desc": "An AR face-filter app built on ARCore face tracking and tested on a Galaxy S21.",
-    "img": "/assets/img/projects/darkroom-ar.jpg", "fit": "phone", "alt": "DarkRoom AR explore screen"
+    "img": "/assets/img/projects/banners/darkroom-ar.jpg", "fit": "cover", "alt": "DarkRoom AR explore screen"
   },
   {
     "id": "punchverse", "name": "PunchVerse VR", "featured": true,
