@@ -29,7 +29,7 @@ window.PROJECTS = [
     link: '/bandpulse/', linkLabel: 'Official game site'
   },
   {
-    id: 'vpn-super', name: 'VPN Super FREE VPN', featured: true,
+    id: 'vpn-super', name: 'VPN Super Free', featured: true,
     cats: ['apps'], status: 'soon', statusLabel: 'Update 1.3 · HUAWEI AppGallery', owner: 'personal',
     platform: 'Android · HUAWEI AppGallery', tech: 'Unity · Java VpnService · Xray-core', role: 'Solo developer',
     desc: 'One-tap VPN that picks the fastest server and only says “Protected” after traffic really flows. Split tunnelling, live exit-IP check, server switching without dropping.',
