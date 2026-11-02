@@ -107,73 +107,150 @@
     if (location.hash) fromHash();
   }
 
-  // Inquiry form: sent in the background through FormSubmit (a form-to-email service) to the studio inbox.
-  // Without JavaScript the form posts to the same service as a normal page; if the service cannot be reached,
-  // the visitor gets a ready-made email to send instead.
-  function contactForm() {
+  // ---------------------------------------------------------------- WhatsApp + email inquiry
+  var WA_ICON = '<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>';
+  var SOURCE = 'Abdur Studio Portfolio';
+
+  // Digits only, 8 to 15 digits (international format without +). Empty or invalid means "not configured".
+  function waNumber() {
+    var n = String(SITE.whatsappNumber || '').replace(/[\s+\-().]/g, '');
+    return /^[1-9]\d{7,14}$/.test(n) ? n : '';
+  }
+  function waLink(text) { return 'https://wa.me/' + waNumber() + (text ? '?text=' + encodeURIComponent(text) : ''); }
+
+  // Floating WhatsApp button on every page (only when a number is configured). It opens a chat; it never sends anything.
+  function whatsappFab() {
+    if (!waNumber() || document.querySelector('.wa-fab')) return;
+    var a = el('a', 'wa-fab');
+    a.href = waLink('Hello Abdur Studio, I found your portfolio and would like to discuss a project.');
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', 'Chat on WhatsApp');
+    a.innerHTML = WA_ICON + '<span class="wa-fab__tip" aria-hidden="true">Chat on WhatsApp</span>';
+    document.body.appendChild(a);
+    document.body.classList.add('has-fab');
+    document.querySelectorAll('[data-wa-direct]').forEach(function (l) {
+      l.href = waLink('Hello Abdur Studio, I found your portfolio and would like to discuss a project.');
+      l.target = '_blank';
+      l.rel = 'noopener';
+      l.hidden = false;
+    });
+  }
+
+  // Contact form: builds one formatted message and hands it to WhatsApp (wa.me click-to-chat) or the visitor's email app.
+  // Nothing is sent by this page: the visitor still has to press Send in WhatsApp or in their email app.
+  function inquiryForm() {
     var form = document.getElementById('inquiry-form');
     if (!form) return;
     var status = document.getElementById('inquiry-status');
-    var btn = document.getElementById('inquiry-send');
-    var endpoint = 'https://formsubmit.co/ajax/' + SITE.studioEmail;
+    var waBtn = document.getElementById('send-wa');
+    var mailBtn = document.getElementById('send-email');
+    var note = document.getElementById('send-note');
+    var hasWa = !!waNumber();
 
-    function say(text, kind) {
-      if (!status) return;
-      status.textContent = text;
+    if (hasWa) {
+      waBtn.hidden = false;
+    } else {
+      // no WhatsApp number configured: email becomes the main action
+      mailBtn.className = 'btn btn--primary';
+      mailBtn.type = 'submit';
+    }
+
+    function say(html, kind) {
       status.className = 'form-status' + (kind ? ' form-status--' + kind : '');
+      status.textContent = '';
+      if (typeof html === 'string') status.textContent = html; else status.appendChild(html);
     }
-    function mailtoHref(d) {
-      var body = 'Name: ' + d.get('name') + '\nEmail: ' + d.get('email') + '\nCompany: ' + (d.get('company') || '-') +
-        '\nProject type: ' + d.get('category') + '\nBudget: ' + d.get('budget') + '\n\n' + d.get('message');
-      return 'mailto:' + SITE.studioEmail + '?subject=' + encodeURIComponent('Project inquiry: ' + d.get('category')) + '&body=' + encodeURIComponent(body);
+    function val(n) { return (form.elements[n].value || '').replace(/\r\n?/g, '\n').trim(); }
+    function collect() {
+      return { name: val('name'), email: val('email'), company: val('company'), type: val('category'), budget: val('budget'), message: val('message') };
     }
-    function done(d) {
-      form.innerHTML = '';
-      var box = el('div', 'form-done');
-      box.setAttribute('role', 'status');
-      box.innerHTML = '<svg viewBox="0 0 52 52" width="64" height="64" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 27l8 8 14-17" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      box.appendChild(el('h2', null, 'Message sent'));
-      box.appendChild(el('p', 'muted', 'Thanks' + (d.get('name') ? ', ' + d.get('name') : '') + '. I will reply to ' + (d.get('email') || 'the email address you entered') + '.'));
-      var again = el('button', 'btn btn--ghost', 'Send another message');
-      again.type = 'button';
-      again.addEventListener('click', function () { location.href = '/contact/'; });
-      box.appendChild(again);
-      form.appendChild(box);
-      box.scrollIntoView({ block: 'center', behavior: REDUCE ? 'auto' : 'smooth' });
+    function valid() {
+      ['name', 'message'].forEach(function (n) { form.elements[n].setCustomValidity(''); });
+      var d = collect();
+      if (!d.name) form.elements.name.setCustomValidity('Please enter your name.');
+      if (!d.message) form.elements.message.setCustomValidity('Please describe your project.');
+      var ok = form.reportValidity();
+      return ok ? d : null;
+    }
+    ['name', 'message'].forEach(function (n) { form.elements[n].addEventListener('input', function () { this.setCustomValidity(''); }); });
+
+    function whatsappText(d) {
+      return [
+        'Hello Abdur Studio, I would like to discuss a project.',
+        '',
+        '*Name:* ' + d.name,
+        '*Company:* ' + (d.company || '-'),
+        '*Project type:* ' + d.type,
+        '*Budget:* ' + (d.budget || '-'),
+        d.email ? '*Email:* ' + d.email : null,
+        '',
+        '*Project description:*',
+        d.message,
+        '',
+        'Website source: ' + SOURCE
+      ].filter(function (l) { return l !== null; }).join('\n');
+    }
+    function emailParts(d) {
+      var body = [
+        'Hello Abdur,',
+        '',
+        'I would like to discuss a project. My details are below.',
+        '',
+        'Name: ' + d.name,
+        'Company: ' + (d.company || '-'),
+        'Project type: ' + d.type,
+        'Budget: ' + (d.budget || '-'),
+        d.email ? 'Email: ' + d.email : null,
+        '',
+        'Project description:',
+        d.message,
+        '',
+        'Website source: ' + SOURCE,
+        '',
+        'Kind regards,',
+        d.name
+      ].filter(function (l) { return l !== null; }).join('\n');
+      return { subject: 'Project inquiry: ' + d.type + ' (' + d.name + ')', body: body };
+    }
+    // mailto bodies need CRLF line breaks, and every part percent-encoded
+    function mailtoUrl(d) {
+      var m = emailParts(d);
+      return 'mailto:' + SITE.studioEmail + '?subject=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body.replace(/\n/g, '\r\n'));
     }
 
-    if (/[?&]sent=1/.test(location.search)) {
-      done(new FormData());
-      return;
+    function sendWhatsApp() {
+      var d = valid();
+      if (!d) return;
+      var win = window.open(waLink(whatsappText(d)), '_blank', 'noopener');
+      if (!win) location.href = waLink(whatsappText(d)); // pop-up blocked: open in this tab
+      say('WhatsApp is opening with your message ready. Press Send there to deliver it.', 'ok');
+    }
+    function sendEmail() {
+      var d = valid();
+      if (!d) return;
+      location.href = mailtoUrl(d);
+      var wrap = document.createDocumentFragment();
+      wrap.appendChild(document.createTextNode('Your email app should open with the message ready. If nothing opens, write to '));
+      var a = el('a', null, SITE.studioEmail);
+      a.href = 'mailto:' + SITE.studioEmail;
+      wrap.appendChild(a);
+      wrap.appendChild(document.createTextNode(' directly.'));
+      say(wrap, 'ok');
     }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      var d = new FormData(form);
-      if (d.get('_honey')) { done(d); return; } // a bot filled the hidden field: pretend it worked
-      d.set('_subject', 'New project inquiry: ' + d.get('category') + ' (' + d.get('name') + ')');
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      say('', '');
-      var failed = function () {
-        btn.disabled = false;
-        btn.textContent = 'Send message';
-        status.className = 'form-status form-status--error';
-        status.textContent = 'The message could not be sent. ';
-        var a = el('a', null, 'Send it from your email app instead');
-        a.href = mailtoHref(d);
-        status.appendChild(a);
-        status.appendChild(document.createTextNode(' or write to ' + SITE.studioEmail + '.'));
-      };
-      fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: d })
-        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
-        .then(function (res) {
-          if (res.ok && (res.j.success === true || res.j.success === 'true')) done(d);
-          else failed();
-        })
-        .catch(failed);
-    });
+    form.addEventListener('submit', function (e) { e.preventDefault(); if (hasWa) sendWhatsApp(); else sendEmail(); });
+    mailBtn.addEventListener('click', function (e) { if (mailBtn.type === 'submit') return; e.preventDefault(); sendEmail(); });
+    if (!hasWa) {
+      var lead = document.getElementById('form-lead');
+      var intro = document.getElementById('contact-lead');
+      if (lead) lead.textContent = 'Fill this in and send it by email. Nothing is sent until you press Send in your email app.';
+      if (intro) intro.textContent = 'Games, mobile apps, AR, Meta Quest and 3D experiences. Share a few details and send them by email.';
+    }
+    if (!hasWa && note) note.textContent ='This opens your email app with the message ready. You can also write to ' + SITE.studioEmail + ' directly.';
+
+    // used by tests and by anyone who wants to inspect the exact messages
+    window.__inquiry = { whatsappText: whatsappText, emailParts: emailParts, mailtoUrl: mailtoUrl, waLink: waLink, collect: collect };
   }
 
   // ---------------------------------------------------------------- motion
@@ -317,6 +394,7 @@
   navToggle();
   motion();
   projectFilter();
-  contactForm();
+  inquiryForm();
+  whatsappFab();
   document.querySelectorAll('[data-year]').forEach(function (n) { n.textContent = new Date().getFullYear(); });
 })();

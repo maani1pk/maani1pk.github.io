@@ -8,6 +8,14 @@ window.SITE = {
   personName: 'Abdur Rehman Arshad',
   studioName: 'Abdur Studio',
   studioEmail: 'maani1pk@gmail.com',
+
+  // >>> WHATSAPP NUMBER: set this one value <<<
+  // Used by the Contact page button ("Send Inquiry on WhatsApp") and the floating WhatsApp button on every page.
+  // International format, digits only: country code + number, with no "+", spaces, dashes or leading zeros.
+  // Example format (not a real number): '15551234567'
+  // While this is empty, the WhatsApp buttons stay hidden and the email button becomes the main one.
+  whatsappNumber: '',
+
   accent: '#FF8A4C', // also --r1 / --accent in assets/css/site.css
 
   vimersive: {
