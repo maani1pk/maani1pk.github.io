@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy · VPN Super</title>
+<meta name="description" content="Privacy policy for VPN Super FREE VPN (Android, HUAWEI AppGallery): what the app stores on your phone, how VPN traffic and IP addresses are handled, what the HUAWEI Ads SDK collects, and your choices.">
+<link rel="canonical" href="https://maani1pk.github.io/vpn-super/privacy-policy.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#060b1a">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/img/icon-64.png" alt="" width="32" height="32">VPN Super</a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav">&#9776;</button>
+    <nav class="nav" id="nav">
+      <a href="./#how">How it works</a>
+      <a href="./#features">Features</a>
+      <a href="./#download">Download</a>
+      <a href="support.html">Support</a>
+      <a href="privacy-policy.html" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc">
+  <p class="kicker">Legal</p>
+  <h1>VPN Super Privacy Policy</h1>
+  <p class="meta"><strong>Effective date:</strong> 3 November 2026</p>
+  <p class="meta"><strong>App:</strong> VPN Super FREE VPN for Android (<code>com.vpnappfree.freevpnpro</code>), version 1.3 and later, distributed on HUAWEI AppGallery</p>
+  <p class="meta"><strong>Developer (data controller for the app):</strong> Abdur Rehman Arshad, trading as Abdur Studio, Lahore, Pakistan</p>
+  <p class="meta"><strong>Contact:</strong> <a href="mailto:maani1pk@gmail.com?subject=VPN%20Super%20privacy">maani1pk@gmail.com</a></p>
+
+  <p>This policy explains what information VPN Super handles, why, who receives it, how long it is kept and the choices you have. It describes what the app actually does in its code. Where we cannot verify something (for example what a hosting provider logs), we say so instead of making a promise.</p>
+
+  <div class="summary">
+    <p><strong>In short</strong></p>
+    <ul>
+      <li>There are <strong>no accounts</strong>, no sign-up and no payments. The app does not ask for your name, email, phone number, contacts, photos, location or microphone.</li>
+      <li>When the VPN is on, your internet traffic goes <strong>through the VPN server you chose</strong>. That server necessarily handles your device's IP address and the traffic you send in order to forward it.</li>
+      <li>The <strong>app</strong> does not record which websites you visit and has no analytics or crash-reporting service. We <strong>do not claim a "no-logs" policy for the servers</strong>; see <a href="#servers">section 3</a>.</li>
+      <li>The app is free and shows <strong>non-personalized ads from HUAWEI Ads (Petal Ads)</strong>. The HUAWEI Ads SDK collects device and network data, including an advertising identifier and IP address; see <a href="#ads">section 5</a>.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <strong>Contents</strong>
+    <ol>
+      <li><a href="#device">Information stored on your phone</a></li>
+      <li><a href="#vpn">How the VPN handles your traffic</a></li>
+      <li><a href="#servers">The VPN servers</a></li>
+      <li><a href="#network">Other connections the app makes</a></li>
+      <li><a href="#ads">Advertising (HUAWEI Ads)</a></li>
+      <li><a href="#permissions">Permissions</a></li>
+      <li><a href="#sharing">Sharing and selling</a></li>
+      <li><a href="#retention">Retention</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#rights">Your rights and choices</a></li>
+      <li><a href="#transfers">International transfers</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="device">1. Information stored only on your phone</h2>
+  <p>VPN Super keeps the following in the app's private storage on your phone. It is <strong>not sent to us</strong>:</p>
+  <ul>
+    <li><strong>The server list</strong> downloaded from our server-list service (section 4). It contains the server addresses and the connection settings the app needs. It is stored <strong>encrypted</strong> with a key held in the Android Keystore.</li>
+    <li><strong>Your settings:</strong> the location you selected, whether to connect when the app opens, whether IPv6 is routed, whether you have seen the VPN permission explanation, and the list of apps you chose to exclude from the VPN (split tunnelling).</li>
+    <li><strong>Connection state</strong> needed while the VPN runs (for example which server is connected and since when), and the most recent delay measurements shown in the Locations list.</li>
+  </ul>
+  <p>To let you choose apps for split tunnelling, the app reads the names of apps that have a launcher icon on your phone. This list is shown to you on the device and is <strong>never uploaded</strong>. The app's data is removed when you uninstall it or clear its data in Android settings. The app disables Android cloud backup of its data, so the server list and settings are not copied to a backup service.</p>
+
+  <h2 id="vpn">2. How the VPN handles your traffic</h2>
+  <p>When you connect, the app creates a VPN interface using Android's VPN service. Unless you exclude an app with split tunnelling, your device's internet traffic is sent through the VPN engine (the open-source Xray core) to the VPN server you selected, or the one the app selected with <span class="ui">Fastest available</span>. The server forwards your traffic to its destination, so the websites and apps you use see the server's IP address instead of yours.</p>
+  <ul>
+    <li><strong>DNS:</strong> while connected, domain-name lookups are sent through the tunnel to public DNS resolvers, <strong>Cloudflare (1.1.1.1)</strong> and <strong>Google Public DNS (8.8.8.8)</strong>. Those resolvers see the domain names looked up and the VPN server's address, not your device's address. Their own privacy policies apply.</li>
+    <li><strong>IPv6</strong> is blocked inside the tunnel unless you turn on <span class="ui">Route IPv6</span>, so IPv6 traffic does not bypass the VPN.</li>
+    <li><strong>Excluded apps</strong> (split tunnelling) connect directly, without the VPN, and are seen with your real IP address.</li>
+    <li><strong>Protection between your phone and the server</strong> depends on the protocol of the server you use (Shadowsocks, VLESS or Trojan, sometimes carried over WebSocket or TLS). We do not promise that every server encrypts traffic in the same way, and a VPN does not make you anonymous.</li>
+    <li>The app itself <strong>does not inspect, record or upload the content of your traffic or the list of sites you visit</strong>.</li>
+  </ul>
+
+  <h2 id="servers">3. The VPN servers</h2>
+  <p>The servers in the app are provided through a server list that we operate, and run on rented infrastructure from hosting providers, currently mainly in Germany, the Netherlands and the United Kingdom. Any VPN server must process the following to work:</p>
+  <ul>
+    <li>the <strong>IP address</strong> your device connects from, and the time and duration of the connection;</li>
+    <li>the <strong>traffic</strong> you send through it (destinations and data), which it forwards to the internet.</li>
+  </ul>
+  <p><strong>We do not use the servers to build a history of the websites you visit, and we do not sell traffic data.</strong> However, the server software and the hosting providers can keep standard technical logs (such as connection times, IP addresses and error messages) for operation, security and abuse prevention. <strong>We do not claim a "zero-logs" or "no-logs" policy.</strong> Where such logs exist, they are used only to run and protect the service and are not used for advertising.</p>
+  <p>Because the servers forward your traffic, the websites you visit, your DNS resolver (section 2) and network operators along the way can see traffic coming from the server's address, as with any VPN.</p>
+
+  <h2 id="network">4. Other connections the app makes</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Connection</th><th>Why</th><th>What the other side receives</th></tr></thead>
+    <tbody>
+      <tr><td>Our server-list service (HTTPS)</td><td>Downloads the current list of VPN servers when the app starts or you refresh it</td><td>Your IP address, the request time and a generic app identifier in the request header. No device ID or account.</td></tr>
+      <tr><td>Each VPN server (delay test)</td><td>Measures delay to show it in Locations and to pick the fastest server</td><td>Your IP address and a short test connection</td></tr>
+      <tr><td><code>www.gstatic.com</code> / <code>www.google.com</code> (through the tunnel)</td><td>Checks that traffic really flows before showing “Protected”, and while connected</td><td>An empty test request from the VPN server's address</td></tr>
+      <tr><td><code>api.ip.sb</code> (through the tunnel)</td><td>Shows you the public IP address and country that websites now see</td><td>A lookup request from the VPN server's address</td></tr>
+      <tr><td>HUAWEI Ads (Petal Ads)</td><td>Loads and measures ads</td><td>See section 5</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The app contains <strong>no analytics, crash-reporting or tracking SDK</strong> other than the HUAWEI Ads SDK. The app never uploads its own diagnostic messages, and never writes server credentials or your traffic to them.</p>
+
+  <h2 id="ads">5. Advertising (HUAWEI Ads / Petal Ads)</h2>
+  <p>VPN Super is free and shows ads from <strong>HUAWEI Ads (Petal Ads)</strong> using the HUAWEI Ads Kit SDK: a banner at the bottom of the screen and, at most every few minutes, a full-screen ad after you disconnect. Ads are never shown on the VPN permission screen or while the app is connecting.</p>
+  <p><strong>The app only requests non-personalized ads</strong>: ads are chosen from context (such as the app and the ad slot), not from a profile of your interests. To request, show, measure and protect ads, the HUAWEI Ads SDK processes the following and sends it to Huawei, according to Huawei's <a href="https://developer.huawei.com/consumer/en/doc/HMSCore-Guides/advertisement-service-data-protection-0000002476949158">Data Protection Information About Ads Kit</a>:</p>
+  <ul>
+    <li>your device's <strong>advertising identifier</strong> (on Huawei devices, the OAID);</li>
+    <li><strong>IP address</strong>;</li>
+    <li><strong>device information</strong> (such as brand and model), operating system information, <strong>network type and carrier</strong>;</li>
+    <li><strong>app information</strong> (such as the app name and version) and contextual information about the ad request;</li>
+    <li><strong>ad and campaign identifiers</strong> and your <strong>interactions with ads</strong> (views, clicks).</li>
+  </ul>
+  <p>Ad requests made while the VPN is connected travel through the VPN like other traffic. We have removed the “query all installed apps” and “install other apps” permissions that the HUAWEI Ads SDK would otherwise add, and the app does not request location permission. We do not receive this data in a form that identifies you; we only see aggregated reports, such as the number of ads shown.</p>
+  <p>For this processing outside mainland China, <strong>Aspiegel SE</strong> (a Huawei company in Ireland) is the data controller for Petal Ads. Huawei's processing and retention are described in the <a href="https://legal.cloud.huawei.eu/website/privacy/index.htm">Statement About Petal Ads and Privacy</a>. On devices without HUAWEI Mobile Services, ads usually do not load at all.</p>
+
+  <h2 id="permissions">6. Permissions</h2>
+  <ul>
+    <li><strong>VPN service</strong> (Android asks you to allow the connection the first time): to create the tunnel.</li>
+    <li><strong>Internet and network state</strong>: to connect, test servers and notice network changes.</li>
+    <li><strong>Notifications</strong> (Android 13 and newer asks you): to show the VPN status and a Disconnect button while connected. You can refuse; the VPN still works.</li>
+    <li><strong>Foreground service</strong>: to keep the VPN running while you use other apps.</li>
+  </ul>
+  <p>The app does not request location, contacts, camera, microphone, storage, phone or SMS permissions.</p>
+
+  <h2 id="sharing">7. Sharing and selling</h2>
+  <p>We do not sell your personal information. Data leaves your phone only as described above: to the VPN server and our server-list service so the VPN can work, to the hosting providers that run those servers, to the DNS resolvers and test endpoints listed in sections 2 and 4, and to Huawei / Aspiegel SE through the ads SDK (and, through Petal Ads, to the advertisers and ad technology partners Huawei works with, as described in Huawei's statement). We may disclose information if required by law.</p>
+
+  <h2 id="retention">8. Retention</h2>
+  <ul>
+    <li><strong>On your phone:</strong> until you uninstall the app or clear its data.</li>
+    <li><strong>Server and server-list technical logs</strong>, where kept: only as long as needed for operation, security and abuse prevention, and then deleted or overwritten.</li>
+    <li><strong>Advertising data:</strong> retained by Huawei according to the <a href="https://legal.cloud.huawei.eu/website/privacy/index.htm">Statement About Petal Ads and Privacy</a>. We do not hold copies.</li>
+    <li><strong>Emails you send us:</strong> only as long as needed to answer them.</li>
+  </ul>
+
+  <h2 id="children">9. Children</h2>
+  <p>VPN Super is a general-audience utility and is <strong>not directed to children under 13</strong> (or the minimum age in your country). We do not knowingly collect personal information from children. If you believe a child has used the app and data was collected through ads, contact us and we will help, including by explaining how to reset the advertising identifier or delete the app's data.</p>
+
+  <h2 id="rights">10. Your rights and choices</h2>
+  <p>Depending on where you live (for example under the EU/UK GDPR or US state laws such as the California Consumer Privacy Act), you may have the right to access, correct, delete or port your personal information, to object to or restrict processing, and to opt out of targeted advertising or the "sale"/"sharing" of personal information, without discrimination.</p>
+  <ul>
+    <li><strong>Stop all collection by the app:</strong> disconnect and uninstall VPN Super.</li>
+    <li><strong>Delete data on your phone:</strong> clear the app's data in Android settings, or uninstall.</li>
+    <li><strong>Advertising identifier:</strong> on Huawei devices, reset the OAID or turn off personalized ads in <span class="ui">Settings ▸ Privacy ▸ Ads and privacy</span>; on other Android devices, in your device's ads settings.</li>
+    <li><strong>Data held by Huawei:</strong> use the contact options in the <a href="https://legal.cloud.huawei.eu/website/privacy/index.htm">Statement About Petal Ads and Privacy</a>.</li>
+    <li><strong>Anything else:</strong> email <a href="mailto:maani1pk@gmail.com?subject=VPN%20Super%20privacy">maani1pk@gmail.com</a>. Because there are no accounts, we may need details such as the approximate time and your IP address to find any server-side log entries.</li>
+  </ul>
+  <p>Where GDPR applies, we rely on our <strong>legitimate interest</strong> in providing and securing the VPN service you asked for and in funding a free app with non-personalized ads, and on <strong>performance of the service</strong> you requested when you connect. If you are in the EEA, UK or Switzerland, you can complain to your local data protection authority.</p>
+
+  <h2 id="transfers">11. International transfers</h2>
+  <p>We are based in Pakistan. The VPN servers run in the countries shown in the app (currently mainly Germany, the Netherlands and the United Kingdom), and the DNS resolvers, test endpoints and Huawei's ad service may process data in other countries, including the United States and the EU. Huawei states that Petal Ads data for users outside mainland China is handled by Aspiegel SE in Ireland.</p>
+
+  <h2 id="security">12. Security</h2>
+  <p>The server list is downloaded over HTTPS and stored encrypted on your phone; the app trusts only system certificate authorities and does not allow unencrypted connections for its own requests. The VPN status between the app and its tunnel process is protected so that other apps cannot read it. No method of transmission or storage is completely secure, and we cannot guarantee the security of traffic between a VPN server and the websites you visit.</p>
+
+  <h2 id="changes">13. Changes to this policy</h2>
+  <p>If we change how the app handles data, we will update this page and the effective date above before the change reaches the app.</p>
+
+  <h2 id="contact">14. Contact</h2>
+  <p>Abdur Rehman Arshad, trading as Abdur Studio, Lahore, Pakistan<br>Email: <a href="mailto:maani1pk@gmail.com?subject=VPN%20Super%20privacy">maani1pk@gmail.com</a></p>
+  <p>This website itself sets no cookies and uses no analytics or third-party scripts.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Abdur Studio · VPN Super</span>
+    <nav aria-label="Footer">
+      <a href="./">VPN Super home</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:maani1pk@gmail.com">maani1pk@gmail.com</a>
+      <a href="https://maani1pk.github.io/">More apps</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

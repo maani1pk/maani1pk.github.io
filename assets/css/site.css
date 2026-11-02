@@ -465,6 +465,8 @@ html { scroll-padding-top: 84px; }
 .card__actions .btn-store { min-height: 44px; padding: 5px 14px 6px; }
 .card__actions .btn-store small { font-size: 10px; }
 .card__actions .btn-store strong { font-size: 15px; }
+.card__privacy { align-self: flex-start; margin-top: 10px; font-size: 13px; color: inherit; opacity: .7; text-decoration: underline; text-underline-offset: 3px; }
+.card__privacy:hover { opacity: 1; }
 .btn-store { display: inline-flex; flex-direction: column; justify-content: center; min-height: 48px; padding: 6px 16px 7px; border-radius: 12px; background: #fff; color: #0B0B10; line-height: 1.1; border: 1px solid #fff; transition: transform .25s var(--ease), box-shadow .25s, background .25s; }
 .btn-store small { font-size: 11px; font-weight: 500; letter-spacing: .01em; }
 .btn-store strong { font: 600 17px var(--display); letter-spacing: -.01em; }

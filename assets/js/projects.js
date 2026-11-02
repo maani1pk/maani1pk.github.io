@@ -7,6 +7,8 @@
  * stock:  true when the image is an illustrative stock photo, not a capture
  * live:   true adds a "Live" badge on the image (only for apps actually on a store)
  * store:  store listing URL; adds an App Store button next to the main link
+ * storeName: store shown on that button when it isn't the App Store (e.g. 'HUAWEI AppGallery')
+ * privacy: privacy policy URL; adds a small "Privacy policy" link under the card
  */
 window.PROJECTS = [
   {
@@ -25,6 +27,16 @@ window.PROJECTS = [
     desc: 'One song, every instrument: piano, guitar, drums and DJ, 12 original songs and a 60-level World Tour.',
     img: '/bandpulse/assets/img/shot-piano.jpg', imgFit: 'phone', alt: 'BandPulse Piano Rush gameplay',
     link: '/bandpulse/', linkLabel: 'Official game site'
+  },
+  {
+    id: 'vpn-super', name: 'VPN Super FREE VPN', featured: true,
+    cats: ['apps'], status: 'soon', statusLabel: 'Update 1.3 · HUAWEI AppGallery', owner: 'personal',
+    platform: 'Android · HUAWEI AppGallery', tech: 'Unity · Java VpnService · Xray-core', role: 'Solo developer',
+    desc: 'One-tap VPN that picks the fastest server and only says “Protected” after traffic really flows. Split tunnelling, live exit-IP check, server switching without dropping.',
+    img: '/vpn-super/assets/img/shot-protected.jpg', imgFit: 'phone', alt: 'VPN Super protected screen with a German exit IP',
+    link: '/vpn-super/', linkLabel: 'View website',
+    store: 'https://appgallery.huawei.com/app/C108355249', storeName: 'HUAWEI AppGallery',
+    privacy: '/vpn-super/privacy-policy.html'
   },
   {
     id: 'punchverse', name: 'PunchVerse VR', featured: true,
@@ -126,7 +138,7 @@ window.PROJECTS = [
 ];
 
 window.PROJECT_FILTERS = [
-  ['all', 'All'], ['games', 'Mobile Games'], ['kids', 'Kids’ Apps'], ['ar', 'AR Applications'],
+  ['all', 'All'], ['games', 'Mobile Games'], ['apps', 'Mobile Apps'], ['kids', 'Kids’ Apps'], ['ar', 'AR Applications'],
   ['vr', 'VR & Meta Quest'], ['training', 'Training & Simulation'], ['i3d', 'Interactive 3D'],
   ['client', 'Client Projects'], ['proto', 'Prototypes & Experiments']
 ];

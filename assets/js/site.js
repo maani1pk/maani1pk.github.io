@@ -91,14 +91,21 @@
       actions.appendChild(l);
     }
     if (p.store) {
+      var storeName = p.storeName || 'App Store';
       var s = el('a', 'btn-store');
       s.href = p.store;
       s.rel = 'noopener';
-      s.setAttribute('aria-label', 'Download ' + p.name + ' on the App Store');
-      s.appendChild(el('small', null, 'Download on the'));
-      s.appendChild(el('strong', null, 'App Store'));
+      s.setAttribute('aria-label', 'Download ' + p.name + ' on ' + (p.storeName ? '' : 'the ') + storeName);
+      s.appendChild(el('small', null, p.storeName ? 'Get it on' : 'Download on the'));
+      s.appendChild(el('strong', null, storeName));
       actions.appendChild(s);
       body.appendChild(actions);
+    }
+    if (p.privacy) {
+      var pv = el('a', 'card__privacy', 'Privacy policy');
+      pv.href = p.privacy;
+      pv.setAttribute('aria-label', 'Privacy policy: ' + p.name);
+      body.appendChild(pv);
     }
     a.appendChild(body);
     return a;
