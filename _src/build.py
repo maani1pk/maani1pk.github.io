@@ -79,7 +79,7 @@ def footer():
     return ('<footer class="site-footer">\n<div class="wrap">\n<div class="foot">\n'
             '<div><h2>Abdur Studio</h2><p>Games, apps and immersive experiences by Abdur Rehman Arshad. Unity, AR, VR and mixed reality, from prototype to a build on a real device.</p></div>\n'
             f'<div><h2>Work</h2><ul><li><a href="/work/">All projects</a></li>{cats}</ul></div>\n'
-            '<div><h2>Studio</h2><ul><li><a href="/services/">Services</a></li><li><a href="/#studio">About the studio</a></li><li><a href="/#vimersive">Vimersive Studio</a></li><li><a href="/contact/">Contact</a></li></ul></div>\n'
+            '<div><h2>Studio</h2><ul><li><a href="/services/">Services</a></li><li><a href="/#studio">About the studio</a></li><li><a href="/#vimersive">Vimersive Studio</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li></ul></div>\n'
             '<div><h2>Apps and policies</h2><ul><li><a href="/work/skyfang/">Skyfang</a></li><li><a href="/skyfang/privacy-policy.html">Skyfang privacy policy</a></li><li><a href="/bandpulse/">BandPulse</a></li><li><a href="/bandpulse/privacy-policy.html">BandPulse privacy policy</a></li><li><a href="/vpn-super/">VPN Super</a></li><li><a href="/vpn-super/privacy-policy.html">VPN Super privacy policy</a></li></ul></div>\n'
             '</div>\n<div class="legal"><span>© <span data-year>2026</span> Abdur Rehman Arshad · <span data-brand="studioName">Abdur Studio</span></span><a href="mailto:maani1pk@gmail.com">maani1pk@gmail.com</a></div>\n</div>\n</footer>')
 

@@ -93,7 +93,7 @@
       var b = $('load-error');
       b.hidden = false;
       b.textContent = err.network ? 'Could not reach the database. Check your connection and reload.' : 'Could not load clients (' + err.message + ').';
-    }).then(function () { updateSyncBanner(); });
+    }).then(function () { updateSyncBanner(); backupBanner(); });
   }
 
   function updateSyncBanner() {
@@ -526,7 +526,18 @@
     setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 1000);
   }
   function stamp() { return todayISO(); }
+  // Reminder: show a banner when no backup has been downloaded from this browser in 30 days (only once there is data worth saving).
+  function backupBanner() {
+    var last = 0;
+    try { last = Number(localStorage.getItem('as-last-backup')) || 0; } catch (e) { /* storage blocked: always remind */ }
+    $('backup-banner').hidden = !clients.length || (Date.now() - last) < 30 * 864e5;
+  }
+  function markBackup() {
+    try { localStorage.setItem('as-last-backup', String(Date.now())); } catch (e) { /* ignore */ }
+    backupBanner();
+  }
   $('btn-json').addEventListener('click', function () {
+    markBackup();
     download('abdur-studio-clients-' + stamp() + '.json', 'application/json', JSON.stringify({ exported_at: new Date().toISOString(), count: clients.length, clients: clients }, null, 2));
   });
   $('btn-xlsx').addEventListener('click', function () {
@@ -535,6 +546,7 @@
       clients.filter(s[1]).slice().sort(function (a, b) { return a.client_id < b.client_id ? -1 : 1; }).forEach(function (c) { rows.push(COLS.map(function (col) { return col[1](c); })); });
       return { name: s[0], rows: rows };
     });
+    markBackup();
     download('abdur-studio-clients-' + stamp() + '.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', buildXlsx(sheets));
   });
 
