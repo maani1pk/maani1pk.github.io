@@ -27,12 +27,13 @@
   },
   {
     "id": "bandpulse", "name": "BandPulse: Piano Rhythm Game", "featured": true, "page": "/bandpulse/",
-    "cats": ["games"], "status": "soon", "statusLabel": "Coming soon · Google Play & App Store", "owner": "personal",
-    "platforms": ["Android", "iPhone"], "tech": ["Unity", "C#", "DSP-clock rhythm engine"], "role": "Solo developer",
+    "cats": ["games"], "status": "released", "statusLabel": "Published · App Store", "owner": "personal",
+    "platforms": ["iOS (iPhone & iPad)"], "tech": ["Unity", "C#", "DSP-clock rhythm engine"], "role": "Solo developer",
     "tagline": "One song, every instrument.",
-    "desc": "One song, every instrument: piano, guitar, drums and DJ, 12 original songs and a 60-level World Tour.",
+    "desc": "Rhythm game for iPhone and iPad: one song, every instrument (piano, guitar, drums and DJ), 12 original songs and a 60-level World Tour. HUAWEI AppGallery version coming soon.",
     "img": "/assets/img/projects/banners/bandpulse.jpg", "fit": "cover", "alt": "BandPulse: One song. Every instrument.",
-    "linkLabel": "Official game site"
+    "linkLabel": "Official game site",
+    "store": "https://apps.apple.com/us/app/bandpulse-piano-rhythm-game/id6827347294", "storeName": "App Store"
   },
   {
     "id": "ludo-royale", "name": "Ludo Royale", "featured": false,

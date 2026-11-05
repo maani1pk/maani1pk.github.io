@@ -99,6 +99,9 @@ a:hover { color: #b9fbff; }
 }
 .store small { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .store strong { font-size: 19px; }
+a.store.live { border-color: var(--cyan); background: rgba(46, 242, 255, 0.10); }
+a.store.live:hover, a.store.live:focus-visible { background: rgba(46, 242, 255, 0.18); }
+a.store.live small { color: var(--cyan); }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   padding: 0 22px; min-height: 52px; border-radius: 14px; font-weight: 800; text-decoration: none;
