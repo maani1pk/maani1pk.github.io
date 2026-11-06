@@ -242,3 +242,12 @@ h2 { margin: 0; font-size: clamp(30px, 6vw, 46px); line-height: 1.08; font-weigh
 .doc th { color: var(--text); background: var(--surface); }
 .table-scroll { overflow-x: auto; }
 .ui { font-weight: 700; color: var(--text); white-space: nowrap; }
+
+/* Abdur Studio home button (links back to the portfolio) */
+.studio-home { display: inline-grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+.studio-home img { width: 24px; height: auto; transition: transform 0.2s; }
+.studio-home:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.28); transform: translateY(-1px); }
+.studio-home:hover img { transform: scale(1.08); }
+.studio-home:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.studio-home + .brand { margin-right: auto; min-width: 0; }
+@media (prefers-reduced-motion: reduce) { .studio-home, .studio-home img { transition: none; } .studio-home:hover, .studio-home:hover img { transform: none; } }
