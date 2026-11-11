@@ -127,6 +127,8 @@ def card(p):
         small = 'Download on the' if sn == 'App Store' else 'Get it on'
         the = 'the ' if sn == 'App Store' else ''
         store = f'<a class="btn-store" href="{p["store"]}" rel="noopener" aria-label="Download {E(p["name"])} on {the}{sn}"><small>{small}</small><strong>{sn}</strong></a>'
+    if p.get('store2'):
+        store += f'<a class="btn-store" href="{p["store2"]}" rel="noopener" aria-label="Get {E(p["name"])} on {p["storeName2"]}"><small>Get it on</small><strong>{p["storeName2"].replace("HUAWEI ", "")}</strong></a>'
     privacy = f'<a class="card__privacy" href="{p["privacy"]}">Privacy policy</a>' if p.get('privacy') else ''
     return (f'<article class="card" data-cats="{cats}" data-primary="{p["primary"]}" data-status="{p["status"]}">\n'
             f'<div class="card__media{phone}">{img}{chip}{live}</div>{note}\n'
@@ -204,7 +206,7 @@ def project_page(p):
     ld_obj = {'@context': 'https://schema.org', '@graph': [
         {'@type': schema_type, 'name': p['name'], 'description': p['desc'], 'url': f'{SITE}{p["url"]}', **({'image': SITE + p['img']} if p.get('img') and not p.get('stock') else {}),
          'creator': {'@type': 'Person', 'name': 'Abdur Rehman Arshad', 'url': SITE + '/'}, 'keywords': ', '.join(p['tech']),
-         **({'sameAs': [p['store']]} if p.get('store') else {})},
+         **({'sameAs': [p['store']] + ([p['store2']] if p.get('store2') else [])} if p.get('store') else {})},
         crumbs_ld([('Home', '/'), ('Work', '/work/'), (c['name'], f'/work/{c["slug"]}/'), (p['name'], p['url'])])]}
     og = p['img'] if p.get('img') and not p.get('stock') else '/assets/img/og.jpg'
     phone = p.get('fit') == 'phone'
