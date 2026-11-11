@@ -36,6 +36,15 @@
     "store": "https://apps.apple.com/us/app/bandpulse-piano-rhythm-game/id6827347294", "storeName": "App Store"
   },
   {
+    "id": "the-last-star", "name": "The Last Star: Into the Dark", "featured": true, "page": "/the-last-star/",
+    "cats": ["games"], "status": "soon", "statusLabel": "Coming soon · App Store", "owner": "personal",
+    "platforms": ["iOS (iPhone & iPad)"], "tech": ["Unity", "C#", "Code-built 2.5D"], "role": "Solo developer",
+    "tagline": "A boy, a small light, a world gone dark.",
+    "desc": "Atmospheric silhouette puzzle platformer for iPhone and iPad: thirty chapters in six acts, hounds and listeners that hunt by trail and sound, and Lumi's light to push back the dark.",
+    "img": "/assets/img/projects/banners/the-last-star.jpg", "fit": "cover", "alt": "The Last Star: Into the Dark title screen, a boy and his glowing companion under a street lamp in the rain",
+    "linkLabel": "Game site"
+  },
+  {
     "id": "ludo-royale", "name": "Ludo Royale", "featured": false,
     "cats": ["games"], "status": "dev", "owner": "personal",
     "platforms": ["Android"], "tech": ["Unity 2022.3", "C#", "ASP.NET Core WebSockets"], "role": "Solo developer",
