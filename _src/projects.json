@@ -103,7 +103,7 @@
   },
   {
     "id": "vpn-super", "name": "VPN Super Free", "featured": true, "page": "/vpn-super/",
-    "cats": ["apps"], "status": "soon", "statusLabel": "Update 1.3 · HUAWEI AppGallery", "owner": "personal",
+    "cats": ["apps"], "status": "released", "statusLabel": "Published · HUAWEI AppGallery", "owner": "personal",
     "platforms": ["Android", "HUAWEI AppGallery"], "tech": ["Unity", "Java VpnService", "Xray-core"], "role": "Solo developer",
     "tagline": "One-tap VPN that only says Protected once traffic really flows.",
     "desc": "One-tap VPN that picks the fastest server and only says “Protected” after traffic really flows. Split tunnelling, live exit-IP check, server switching without dropping.",

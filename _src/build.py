@@ -112,7 +112,8 @@ def card(p):
     img = f'<img src="{p["img"]}" alt="{E(p.get("alt", p["name"]))}" loading="lazy" decoding="async">' if p.get('img') else ''
     if not img:
         img = f'<span class="card__empty" aria-hidden="true"></span>'
-    live = '<span class="card__live">Live on the App Store</span>' if p['status'] == 'released' and p.get('store') and 'apple' in p['store'] else ''
+    live = (f'<span class="card__live">Live on {E("the App Store" if "apple" in p["store"] else p.get("storeName", "the store"))}</span>'
+            if p['status'] == 'released' and p.get('store') else '')
     note = ('<p class="card__note">Illustrative stock photo. Captures coming soon.</p>' if p.get('stock')
             else '<p class="card__note">Cover graphic. Captures coming soon.</p>' if p.get('cover') else '')
     chip = f'<span class="card__badge">{status_chip(p)}</span>' if not live else ''
