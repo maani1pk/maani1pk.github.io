@@ -21,6 +21,7 @@
   ];
   var TRACK = 46, FILL = 30, TOL = 30, GRAB = 44, DONE_AT = 0.965, MAX_JUMP = 90;
   var BLUE = '#2a8cf0', GREEN = '#2fc48d', ORANGE = '#ff8a3d', INK = '#2b2a4c';
+  var TRACK_COL = canvas.getAttribute('data-track') || '#e1e4f5', DOT_COL = canvas.getAttribute('data-dots') || '#8d8fb0';
 
   // ----- geometry -----
   function segLens(pts) { var out = [], t = 0; for (var i = 1; i < pts.length; i++) { var l = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); out.push(l); t += l; } return { segs: out, total: t }; }
@@ -85,9 +86,9 @@
     ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.setTransform(scale, 0, 0, scale, 0, 0);
     var i;
     // the pale track under the whole letter
-    for (i = 0; i < STROKES.length; i++) line(STROKES[i], TRACK, '#e1e4f5');
+    for (i = 0; i < STROKES.length; i++) line(STROKES[i], TRACK, TRACK_COL);
     // dotted guide
-    for (i = 0; i < STROKES.length; i++) line(STROKES[i], 5, '#8d8fb0', [0.1, 13]);
+    for (i = 0; i < STROKES.length; i++) line(STROKES[i], 5, DOT_COL, [0.1, 13]);
     // finished strokes and the part traced so far
     for (i = 0; i < STROKES.length; i++) {
       if (i < idx || finished) line(STROKES[i], FILL, BLUE);

@@ -63,16 +63,15 @@
     <div class="stores"><span class="store-soon"><span>Coming soon to</span><strong>Google Play</strong></span><span class="store-soon"><span>Coming soon to</span><strong>App Store</strong></span></div>
     <p class="note-small">Store listings are being prepared. Some content is free; Unlock Everything and a Coin Pack are optional purchases made by a grown-up.</p>
   </div>
-  <div class="hero-art"><svg viewBox="0 0 400 400" role="img" aria-label="The letter A drawn as a dotted path with a pencil and stars">
-  <circle cx="320" cy="82" r="30" fill="#ffd23f"/><circle cx="64" cy="318" r="20" fill="#ff6fae" opacity=".7"/><circle cx="338" cy="320" r="14" fill="#2fc48d"/>
-  <path d="M96 318 L200 70 L304 318" fill="none" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M138 236 H262" fill="none" stroke="#ffffff" stroke-width="44" stroke-linecap="round"/>
-  <path class="trace-path" d="M96 318 L200 70 L304 318" fill="none" stroke="#8b6cff" stroke-width="10"/>
-  <path class="trace-path" d="M138 236 H262" fill="none" stroke="#8b6cff" stroke-width="10"/>
-  <circle cx="96" cy="318" r="17" fill="#ff8a3d"/><text x="96" y="325" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="20" fill="#fff">1</text>
-  <path d="M296 112 l9 20 22 3 -17 15 5 22 -19 -11 -19 11 5 -22 -17 -15 22 -3z" fill="#ff8a3d"/>
-</svg></div>
+  <div class="hero-art hero-trace">
+    <span class="deco deco-sun" aria-hidden="true"></span><span class="deco deco-pink" aria-hidden="true"></span><span class="deco deco-mint" aria-hidden="true"></span>
+    <svg class="deco deco-star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l5.5 11.9 13 1.5-9.6 8.9 2.6 12.8L20 30.6 8.5 37.1l2.6-12.8L1.5 15.4l13-1.5z" fill="#ff8a3d"/></svg>
+    <canvas id="demo-canvas" data-track="#ffffff" data-dots="#8b6cff" role="img" aria-label="Tracing board for the letter A. Drag from the green dot along the dotted path." width="300" height="340"></canvas>
+    <p class="hero-msg" id="demo-msg" aria-live="polite">Try it: start at the green dot.</p>
+    <div class="hero-tools"><span class="demo-chip" id="demo-chip">Stroke 1 of 3</span><button type="button" class="mini" id="demo-watch">Watch how</button><button type="button" class="mini" id="demo-reset">Start over</button></div>
+  </div>
 </div></section>
+<script src="assets/trace-demo.js" defer></script>
 
 <section class="alt"><div class="wrap">
   <h2>What your child can do</h2>
