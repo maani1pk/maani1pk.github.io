@@ -37,6 +37,15 @@
     "store2": "https://appgallery.huawei.com/app/C119588769", "storeName2": "HUAWEI AppGallery"
   },
   {
+    "id": "tsf-kids-learn-and-trace", "name": "TSF Kids Learn and Trace", "featured": true, "page": "/tsf-kids-learn-and-trace/",
+    "cats": ["apps"], "status": "soon", "statusLabel": "Coming soon · App Store", "owner": "personal",
+    "platforms": ["iOS (iPhone & iPad)", "Android"], "tech": ["Unity", "C#", "Store billing (no ads)"], "role": "Solo developer",
+    "tagline": "Ad-free tracing and learning for little hands.",
+    "desc": "Ad-free app where young children trace letters, numbers, shapes and animals, color pages and play 41 short learning games. Free to start, with two optional purchases that only a grown-up can make.",
+    "img": "/assets/img/projects/banners/tsf-kids-learn-and-trace.jpg", "fit": "cover", "alt": "TSF Kids Learn and Trace home and letter tracing screens on a light blue background",
+    "linkLabel": "Game site"
+  },
+  {
     "id": "the-last-star", "name": "The Last Star: Into the Dark", "featured": true, "page": "/the-last-star/",
     "cats": ["games"], "status": "soon", "statusLabel": "Coming soon · App Store", "owner": "personal",
     "platforms": ["iOS (iPhone & iPad)"], "tech": ["Unity", "C#", "Code-built 2.5D"], "role": "Solo developer",
@@ -142,14 +151,6 @@
     "tagline": "A coloring game for kids with its own design system.",
     "desc": "A coloring game for kids with its own design system.",
     "img": "/assets/img/projects/banners/colorsprout.jpg", "fit": "cover", "alt": "ColorSprout Kids coloring screen on a yellow background"
-  },
-  {
-    "id": "tinytrace", "name": "TinyTrace Kids", "featured": false,
-    "cats": ["apps"], "status": "dev", "owner": "personal",
-    "platforms": ["Android"], "tech": ["Unity", "Data-driven level generation"], "role": "Solo developer",
-    "tagline": "Tracing and drawing mini-games for young kids.",
-    "desc": "Tracing and drawing mini-games for young kids, with 870 generated levels.",
-    "img": "/assets/img/projects/banners/tinytrace.jpg", "fit": "cover", "alt": "TinyTrace Kids letter tracing screen on a blue background"
   },
   {
     "id": "hearthly", "name": "Hearthly", "featured": false,
