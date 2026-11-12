@@ -149,11 +149,11 @@ tr:last-child td { border-bottom: 0; }
 .hero-tools .demo-chip { font-size: .8rem; padding: 5px 10px; }
 .hero-tools .mini { font: 600 .85rem var(--display); color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 12px; padding: 5px 12px; cursor: pointer; }
 .hero-tools .mini:hover { border-color: var(--grape); }
-
-/* ---- Link back to the studio portfolio ---- */
-.studio-bar { background: var(--ink); color: #fff; font: 600 .85rem var(--display); }
-.studio-bar .wrap { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding-block: 8px; }
-.studio-bar a { color: #fff; text-decoration: none; }
-.studio-bar a:hover { text-decoration: underline; }
-.studio-bar span { display: flex; gap: 16px; }
-@media (max-width: 480px) { .studio-bar span a:last-child { display: none; } }
+/* ---- Studio logo button: same pattern as the other Abdur Studio game sites (logo mark before the brand, links home) ---- */
+.studio-home { display: inline-grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--line); background: #fff; transition: background .2s, border-color .2s, transform .2s; }
+.studio-home img { width: 24px; height: auto; transition: transform .2s; }
+.studio-home:hover { background: var(--grape-l); border-color: var(--grape); transform: translateY(-1px); }
+.studio-home:hover img { transform: scale(1.08); }
+.studio-home:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.studio-home + .brand { margin-right: auto; min-width: 0; }
+@media (prefers-reduced-motion: reduce) { .studio-home, .studio-home img { transition: none; } .studio-home:hover, .studio-home:hover img { transform: none; } }
