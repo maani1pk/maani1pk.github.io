@@ -26,6 +26,11 @@
   .stores { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; list-style: none; }
   .stores a, .stores span { display: inline-block; padding: 12px 20px; border-radius: 999px; font-weight: 700; text-decoration: none; }
   .stores a { background: var(--gold); color: #07090d; }
+  .stores a.store-ios, .stores a.alt { display: inline-flex; flex-direction: column; justify-content: center; min-height: 44px; padding: 8px 26px; line-height: 1.15; text-align: left; }
+  .stores a small { font-size: 11px; font-weight: 600; letter-spacing: .05em; opacity: .8; }
+  .stores a strong { font-size: 19px; font-weight: 700; }
+  .stores a.alt { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+  .stores a:hover, .stores a:focus-visible { filter: brightness(1.1); outline: 2px solid var(--gold); outline-offset: 3px; }
   .stores span { border: 1px solid var(--line); color: var(--soft); }
   .hero video { width: 100%; border-radius: var(--radius); box-shadow: 0 18px 50px rgba(0,0,0,.6); background: #000; }
   .band { padding: 32px 0; }
@@ -67,8 +72,8 @@
         <h1>The Last Star<br><em>Into the Dark</em></h1>
         <p class="lead">A boy. A small light. A world that went dark. Thirty silhouette chapters of puzzles and stealth, for iPhone and iPad.</p>
         <ul class="stores">
-          <li><a href="https://apps.apple.com/us/app/id6833202524" style="display:inline-block;padding:12px 22px;border-radius:999px;border:1px solid #f3d98a;color:#f3d98a;font-weight:600;text-decoration:none;letter-spacing:.04em">Download on the App Store</a></li>
-          <li><a href="play/" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#f3d98a;color:#14110a;font-weight:600;text-decoration:none;letter-spacing:.04em">Play free in your browser</a></li>
+          <li><a class="store-ios" href="https://apps.apple.com/us/app/id6833202524" rel="noopener" aria-label="Download The Last Star: Into the Dark on the App Store"><small>Download on the</small><strong>App Store</strong></a></li>
+          <li><a class="alt" href="play/"><small>Try it first</small><strong>Play in your browser</strong></a></li>
         </ul>
       </div>
       <video src="assets/video/the-last-star-trailer.mp4" poster="assets/img/trailer-poster.jpg" controls muted playsinline preload="none" aria-label="Gameplay trailer"></video>
