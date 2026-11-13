@@ -47,12 +47,13 @@
   },
   {
     "id": "the-last-star", "name": "The Last Star: Into the Dark", "featured": true, "page": "/the-last-star/",
-    "cats": ["games"], "status": "soon", "statusLabel": "Coming soon · App Store", "owner": "personal",
+    "cats": ["games"], "status": "released", "statusLabel": "Published · App Store · Play free in browser", "owner": "personal",
     "platforms": ["iOS (iPhone & iPad)"], "tech": ["Unity", "C#", "Code-built 2.5D"], "role": "Solo developer",
     "tagline": "A boy, a small light, a world gone dark.",
     "desc": "Atmospheric silhouette puzzle platformer for iPhone and iPad: thirty chapters in six acts, hounds and listeners that hunt by trail and sound, and Lumi's light to push back the dark.",
     "img": "/assets/img/projects/banners/the-last-star.jpg", "fit": "cover", "alt": "The Last Star: Into the Dark title screen, a boy and his glowing companion under a street lamp in the rain",
-    "linkLabel": "Game site"
+    "linkLabel": "Game site",
+    "store": "https://apps.apple.com/us/app/id6833202524", "storeName": "App Store"
   },
   {
     "id": "ludo-royale", "name": "Ludo Royale", "featured": false,
