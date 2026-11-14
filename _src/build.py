@@ -219,6 +219,11 @@ def project_page(p):
     gal = ''
     if p.get('gallery'):
         gal = '<section class="section section--alt"><div class="wrap"><div class="section-head"><div><h2 class="h2">Screens</h2></div></div><div class="pj-gallery">' + ''.join(f'<figure><img src="{u}" alt="{E(a)}" loading="lazy" width="560" height="1100"></figure>' for u, a in p['gallery']) + '</div></div></section>'
+    vid = ''
+    if p.get('video'):   # [src, poster, label]
+        src, poster, vlabel = p['video']
+        vid = ('<section class="section"><div class="wrap"><div class="section-head"><div><h2 class="h2">Gameplay video</h2></div></div>'
+               f'<video src="{src}" poster="{poster}" controls muted playsinline preload="none" aria-label="{E(vlabel)}" style="display:block;width:100%;max-width:960px;margin:0 auto;border-radius:20px;background:#000"></video></div></section>')
     store = ''
     if p.get('store'):
         sn = p.get('storeName', 'App Store'); small = 'Download on the' if sn == 'App Store' else 'Get it on'
@@ -231,7 +236,7 @@ def project_page(p):
             f'<div class="chips">{status_chip(p)}<span class="chip">{OWNER[p["owner"]]}</span></div>\n<h1 class="h1">{E(p["name"])}</h1>\n<p class="lead">{E(p.get("tagline", p["desc"]))}</p>\n'
             f'<div class="btn-row">{store}<a class="btn btn--primary" href="/contact/">Discuss a similar project</a><a class="btn btn--ghost" href="/work/{c["slug"]}/">More {E(c["short"])} work</a></div>\n'
             f'<dl class="facts"><dt>Status</dt><dd>{E(p.get("statusLabel") or label)}</dd><dt>Category</dt><dd>{cats_links}</dd><dt>Platform</dt><dd>{E(", ".join(p["platforms"]))}</dd><dt>Technology</dt><dd>{E(", ".join(p["tech"]))}</dd><dt>My role</dt><dd>{E(p["role"])}</dd><dt>Owner</dt><dd>{OWNER[p["owner"]]}</dd></dl>\n'
-            f'<div class="prose">{details}{stock}{cover}</div>\n{hl}\n</div>\n{media}\n</div>\n{gal}\n{rel}\n' + cta_block() + '\n</main>\n' + footer() + '\n' + tail())
+            f'<div class="prose">{details}{stock}{cover}</div>\n{hl}\n</div>\n{media}\n</div>\n{vid}\n{gal}\n{rel}\n' + cta_block() + '\n</main>\n' + footer() + '\n' + tail())
 
 # ------------------------------------------------------------------ home
 HERO_SVG = open(os.path.join(ROOT, '_src', 'hero.svg.html'), encoding='utf-8').read()

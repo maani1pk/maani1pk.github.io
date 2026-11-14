@@ -13,15 +13,16 @@
     "id": "tennis-ball-master-3d", "name": "Tennis Ball Master 3D", "featured": true,
     "cats": ["games"], "status": "released", "statusLabel": "Published · App Store", "owner": "personal",
     "platforms": ["iOS (iPhone & iPad)"], "tech": ["Unity", "C#", "3D physics"], "role": "Developer & publisher",
-    "tagline": "3D tennis with spin, slices, drop shots and smashes.",
-    "desc": "3D tennis for iPhone and iPad with drag-and-swipe controls, topspin, slice, drop shots and smashes, several court surfaces and upgradable rackets.",
+    "tagline": "Arcade 3D tennis: tap, swipe and smash.",
+    "desc": "Arcade 3D tennis for iPhone and iPad: tap and swipe shots with slow-motion timing, four modes, a 30-level Career, four tournaments and 27 players to customize. Plays offline.",
     "details": [
-      "Tennis Ball Master 3D has been on the App Store since October 2025 (version 1.0). Matches are played with simple drag-and-swipe shots, and every hit lets you shape spin, speed and placement.",
-      "A larger update is in development: new game modes, a career mode and missions."
+      "Tennis Ball Master 3D has been on the App Store since October 2025. Version 2.0 is a full rebuild in Unity: tap to hit, swipe to aim, Soft, Normal and Power shots, and slow motion that helps you time every return.",
+      "2.0 adds Classic, Survival, Time Attack and Target Rush modes, a 30-level Career with season bosses, four bracket tournaments, 30 missions and a Customize screen for 27 players. It was submitted to the App Store in November 2026."
     ],
-    "highlights": ["Live on the App Store (version 1.0, universal iPhone and iPad)", "Grass, clay and hard court surfaces", "Topspin, slice, drop shot and smash", "Update with new modes and a career mode in development"],
-    "img": "/assets/img/projects/banners/tennis-ball-master-3d.jpg", "fit": "cover", "alt": "Tennis Ball Master 3D screens on a clay-orange background",
-    "gallery": [["/assets/img/projects/tennis-ball-master-3d/shot-2.jpg", "Tennis Ball Master 3D gameplay"], ["/assets/img/projects/tennis-ball-master-3d/shot-3.jpg", "Tennis Ball Master 3D match screen"]],
+    "highlights": ["Live on the App Store (universal iPhone and iPad)", "Four modes: Classic, Survival, Time Attack, Target Rush", "30-level Career with 3-star ratings and boss matches", "Four tournaments, 30 missions, 27 customizable players", "Plays offline; AdMob ads with consent and App Tracking Transparency"],
+    "img": "/assets/img/projects/banners/tennis-ball-master-3d.jpg", "fit": "cover", "alt": "Five Tennis Ball Master 3D 2.0 screens: Customize, Career, a rally, Target Rush and a victory",
+    "video": ["/tennis-ball-master-3d/assets/video/tennis-ball-master-3d-trailer.mp4", "/tennis-ball-master-3d/assets/img/trailer-poster.jpg", "Tennis Ball Master 3D 2.0 gameplay trailer"],
+    "gallery": [["/tennis-ball-master-3d/assets/img/shot-1.jpg", "A rally, with the swipe arrow aiming the shot"], ["/tennis-ball-master-3d/assets/img/shot-2.jpg", "The Play screen with its four modes"], ["/tennis-ball-master-3d/assets/img/shot-3.jpg", "The Career map"], ["/tennis-ball-master-3d/assets/img/shot-4.jpg", "Target Rush"], ["/tennis-ball-master-3d/assets/img/shot-5.jpg", "A three-star victory"], ["/tennis-ball-master-3d/assets/img/shot-6.jpg", "Customizing a player"], ["/tennis-ball-master-3d/assets/img/shot-7.jpg", "Missions"], ["/tennis-ball-master-3d/assets/img/shot-8.jpg", "A tournament bracket"]],
     "linkLabel": "See the project",
     "store": "https://apps.apple.com/us/app/tennis-ball-master-3d/id6754083207", "storeName": "App Store"
   },
