@@ -37,6 +37,15 @@
     "store2": "https://appgallery.huawei.com/app/C119588769", "storeName2": "HUAWEI AppGallery"
   },
   {
+    "id": "plumtile", "name": "Plumtile: Block Puzzle Game", "featured": true, "page": "/plumtile/",
+    "cats": ["games"], "status": "soon", "statusLabel": "Coming soon · App Store", "owner": "personal",
+    "platforms": ["iOS (iPhone & iPad)"], "tech": ["Unity", "C#", "Unity IAP", "Google AdMob"], "role": "Solo developer",
+    "tagline": "Clear lines, chain combos.",
+    "desc": "Block puzzle game for iPhone and iPad: five modes, a 60-level Adventure in six chapters, 30 hand-built puzzles, a daily challenge and extra color themes. Plays offline.",
+    "img": "/assets/img/projects/banners/plumtile.jpg", "fit": "cover", "alt": "Plumtile: block puzzle game",
+    "linkLabel": "Official game site"
+  },
+  {
     "id": "tsf-kids-learn-and-trace", "name": "TSF Kids Learn and Trace", "featured": true, "page": "/tsf-kids-learn-and-trace/",
     "cats": ["apps"], "status": "soon", "statusLabel": "Coming soon · App Store", "owner": "personal",
     "platforms": ["iOS (iPhone & iPad)", "Android"], "tech": ["Unity", "C#", "Store billing (no ads)"], "role": "Solo developer",
